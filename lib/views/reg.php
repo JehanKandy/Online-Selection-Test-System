@@ -9,7 +9,7 @@
         <div class="body">
             <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST" name="reg_form" onsubmit="return valodateReg();">
                 <p class="form-text" id="regUser">Username :</p>
-        
+                <input type="text" name="regUser" id="Userreg" class="form-input">
             </form>
         </div>
     </div>
