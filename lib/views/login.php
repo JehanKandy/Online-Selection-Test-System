@@ -19,6 +19,8 @@
                 <input type="submit" value="Login" name="login" class="btn btn-primary login-btn">
 
             </form>
+            <a href="" style="text-decoration: none; ">Forget Password</a>
+            <br> Don't have an account ? <a href="" style="text-decoration: none;">Create One</a>
         </div>
     </div>
 </div>
