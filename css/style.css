@@ -29,15 +29,25 @@ font-family: 'Teko', sans-serif;
     height: 97vh;
     text-align: center;
     font-family: 'Rubik', sans-serif;
-    background-image: url("../images/exam1.jpg");
+    background-image:  -webkit-linear-gradient(rgba(63, 63, 63, 0.938), rgba(63, 63, 63, 0.938)), url("../images/exam1.jpg");
     background-position: center;
     background-size: cover;
+    color: white;
 }
 .home-content .title{
     font-size: 45px;
+    padding-top: 200px;
 }
 .home-content .body{
     margin-top: 10px;
+}
+.login-content{
+    margin: 150px 250px 150px 250px;
+    padding: 15px 50px 50px 50px;
+    border: 1px solid rgb(190, 190, 190);
+    width: 600px;
+    border-radius: 5px;
+    height: 100%;
 }
 
 /* 
