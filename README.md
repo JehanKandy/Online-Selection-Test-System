@@ -14,6 +14,7 @@
   - css/style.css
   - lib/views/login.php
   - js/script.js
+  - lib/views/reg.php
 
 
 <h1>Developers</h1>
