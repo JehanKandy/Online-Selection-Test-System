@@ -18,6 +18,7 @@
   - lib/views/forget_pass.php
   - lib/views/verify_otp.php
   - lib/views/update_pass.php
+  - lib/views/waiting_user.php
 
 
 <h1>Developers</h1>
