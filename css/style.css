@@ -16,5 +16,10 @@ font-family: 'Teko', sans-serif;
 .footer-content{
     text-align: center;
     font-family: 'Rubik', sans-serif;
-    padding-top: 15px;
+    padding: 10px 0 10px 0;
+    background-color: rgb(241, 241, 241);
+    margin-top: -16px;
+}
+.footer-hr{
+    border-top: 2px solid rgb(184, 184, 184);
 }
