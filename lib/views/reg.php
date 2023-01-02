@@ -9,7 +9,18 @@
         <div class="body">
             <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST" name="reg_form" onsubmit="return valodateReg();">
                 <p class="form-text" id="regUser">Username :</p>
-                <input type="text" name="regUser" id="Userreg" class="form-input">
+                <input type="text" name="uername" id="Userreg" class="form-input">
+
+                <p class="form-text" id="regEmail">Email :</p>
+                <input type="email" name="email" id="Useremail" class="form-input">
+
+                <p class="form-text" id="regpass">Password : </p>
+                <input type="password" name="pass" id="Userpass" class="form-input">
+
+                <p class="form-text" id="regcpass">Confirm Password</p>
+                <input type="password" id="Usercpass" class="form-input">
+
+                <p style="margin-top: 15px;"><input type="reset" value="Clear" class="btn btn-secondary"><input type="submit" value="Sign Up"></p>
             </form>
         </div>
     </div>
