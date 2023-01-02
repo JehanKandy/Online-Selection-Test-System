@@ -12,6 +12,7 @@
   - lib/layouts/header.php
   - lib/layouts/footer.php
   - css/style.css
+  - lib/views/login.php
 
 
 <h1>Developers</h1>
