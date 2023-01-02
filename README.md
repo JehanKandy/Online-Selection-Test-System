@@ -17,6 +17,7 @@
   - lib/views/reg.php
   - lib/views/forget_pass.php
   - lib/views/verify_otp.php
+  - lib/views/update_pass.php
 
 
 <h1>Developers</h1>
