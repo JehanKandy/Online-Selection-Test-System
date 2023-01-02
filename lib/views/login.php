@@ -9,7 +9,7 @@
         <div class="body">
             <form action="<?php echo($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <p class="form-text">Username :</p>
-        
+                <input type="text" name="username" id="" class="form-input">
             </form>
         </div>
     </div>
