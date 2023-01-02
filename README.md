@@ -19,6 +19,7 @@
   - lib/views/verify_otp.php
   - lib/views/update_pass.php
   - lib/views/waiting_user.php
+  - lib/function/config.php
 
 
 <h1>Developers</h1>
