@@ -10,6 +10,14 @@
             <form action="<?php echo($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <p class="form-text">Username :</p>
                 <input type="text" name="username" id="userName" class="form-input">
+                <p id="usernameError"></p>
+
+                <p class="form-text">Password :</p>
+                <input type="password" name="password" id="passWord" class="form-input">
+                <p id="passError"></p>
+            
+                <input type="submit" value="Login" name="login" class="btn btn-primary login-btn">
+
             </form>
         </div>
     </div>
