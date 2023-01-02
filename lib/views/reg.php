@@ -19,7 +19,6 @@
                 <p class="form-text" id="regpass">Password : </p>
                 <input type="password" name="pass" id="Userpass" class="form-input">
                 <p id="regpassError"></p>
-                <p class="checkpass"><span id="p1" class="part1"></span><span id="p2" class="part2"></span><span id="p3" class="part3"></span></p>
 
                 <p class="form-text" id="regcpass">Confirm Password</p>
                 <input type="password" id="Usercpass" class="form-input">
