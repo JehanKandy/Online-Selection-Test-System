@@ -8,7 +8,6 @@
         </div>
         <div class="body">
 
-        </form>            
         </div>
     </div>
 </div>
