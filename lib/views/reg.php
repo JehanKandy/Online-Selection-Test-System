@@ -20,8 +20,10 @@
                 <p class="form-text" id="regcpass">Confirm Password</p>
                 <input type="password" id="Usercpass" class="form-input">
 
-                <p style="margin-top: 15px;"><input type="reset" value="Clear" class="btn btn-secondary"><input type="submit" value="Sign Up" class="btn btn-success"></p>
+                <p style="margin-top: 15px;"><input type="reset" value="Clear" class="btn btn-secondary reg-btns">&nbsp;&nbsp;<input type="submit" value="Sign Up" class="btn btn-success reg-btns"></p>
             </form>
+
+            Already have an Account ? <a href="login.php" style="text-decoration: none;">Sign in</a>
         </div>
     </div>
 </div>
