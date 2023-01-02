@@ -46,9 +46,19 @@ function valodateReg(){
         document.getElementById("regEmail").style.color = "red";
         document.getElementById("Useremail").style.borderColor = "red";
         var emailError = document.getElementById("regemailError");
-        emailError.innerHTML = "Username Can not be empty";
+        emailError.innerHTML = "Email Can not be empty";
         emailError.style.fontSize = "12px";
         emailError.style.color = "red";
+        return false;
+    }
+
+    else if(regPass == "" || regPass == null){
+        document.getElementById("regpass").style.color = "red";
+        document.getElementById("Userpass").style.borderColor = "red";
+        var passError = document.getElementById("regemailError");
+        passError.innerHTML = "Password Can not be empty";
+        passError.style.fontSize = "12px";
+        passError.style.color = "red";
         return false;
     }
 }
