@@ -4,10 +4,18 @@
 <div class="container">
     <div class="login-content">
         <div class="title">
-            <i class="fas fa-user-plus"></i> Register Here
+            <i class="fas fa-key"></i> Get OTP
         </div>
         <div class="body">
-        hi
+            <form action="<?php echo($_SERVER['PHP_SLEF']); ?>" method="POST">
+                <p class="form-text">Username : </p>
+                <input type="text" name="otp_username" id="" class="form-input">
+
+                <p class="form-text">Password : </p>
+                <input type="email" name="otp_email" id="" class="form-input">
+
+                <input type="submit" value="Request OTP" class="btn btn-primary" name="get_otp" style="margin-top: 10px;">
+            </form>
         </div>
     </div>
 </div>
