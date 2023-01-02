@@ -10,7 +10,6 @@
             <form action="<?php echo($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <p class="form-text">Username :</p>
                 <input type="text" name="username" id="userName" class="form-input">
-                <span class="fas fa-user-alt user-ico"></span>
             </form>
         </div>
     </div>
