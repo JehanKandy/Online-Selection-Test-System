@@ -24,3 +24,31 @@ function login_validate(){
         return false;
     }
 }
+
+
+function valodateReg(){
+    var regUser = document.forms["reg_form"]["Userreg"].value;
+    var regEmail = document.forms["reg_form"]["Useremail"].value;
+    var regPass = document.forms["reg_form"]["Userpass"].value;
+    var regcPass = document.forms["reg_form"]["Usercpass"].value;
+
+    if(regUser == "" || regUser == null){
+        document.getElementById("regUser").style.color = "red";
+        document.getElementById("Userreg").style.borderColor = "red";
+        var userError = document.getElementById("reguserError");
+        userError.innerHTML = "Username Can not be empty";
+        userError.style.fontSize = "12px";
+        userError.style.color = "red";
+        return false;
+    }
+
+    else if(regEmail == "" || regEmail == null){
+        document.getElementById("regEmail").style.color = "red";
+        document.getElementById("Useremail").style.borderColor = "red";
+        var emailError = document.getElementById("regemailError");
+        emailError.innerHTML = "Username Can not be empty";
+        emailError.style.fontSize = "12px";
+        emailError.style.color = "red";
+        return false;
+    }
+}
