@@ -19,8 +19,8 @@
                 <input type="submit" value="Login" name="login" class="btn btn-primary login-btn">
 
             </form>
-            <a href="reg.php" style="text-decoration: none; ">Forget Password</a>
-            <br> Don't have an account ? <a href="" style="text-decoration: none;">Sign Up</a>
+            <a href="" style="text-decoration: none; ">Forget Password</a>
+            <br> Don't have an account ? <a href="reg.php" style="text-decoration: none;">Sign Up</a>
         </div>
     </div>
 </div>
