@@ -4,7 +4,7 @@
 <div class="container">
     <div class="login-content">
         <div class="title">
-            <i class="fas fa-key"></i> Verify OTP
+            <i class="fas fa-key"></i> Update Password
         </div>
         <div class="body">
             <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
