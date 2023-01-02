@@ -7,12 +7,12 @@
             <i class="fas fa-user-alt"></i> Login Here
         </div>
         <div class="body">
-            <form action="<?php echo($_SERVER["PHP_SELF"]); ?>" method="POST">
-                <p class="form-text">Username :</p>
+            <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST" name="login_form" onsubmit="return login_validate();">
+                <p class="form-text" id="userText">Username :</p>
                 <input type="text" name="username" id="userName" class="form-input">
                 <p id="usernameError"></p>
 
-                <p class="form-text">Password :</p>
+                <p class="form-text" id="PassText">Password :</p>
                 <input type="password" name="password" id="passWord" class="form-input">
                 <p id="passError"></p>
             
