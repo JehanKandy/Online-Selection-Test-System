@@ -61,6 +61,8 @@ font-family: 'Teko', sans-serif;
 .form-input{
     width: 100%;
     height: 40px;
+    border: 1px solid rgba(179, 179, 179, 0.884);
+    border-radius: 2px;
 }
 /* 
     ***************************************************************************************
