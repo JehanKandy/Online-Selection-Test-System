@@ -16,6 +16,7 @@
   - js/script.js
   - lib/views/reg.php
   - lib/views/forget_pass.php
+  - lib/views/forget_pass.php
 
 
 <h1>Developers</h1>
