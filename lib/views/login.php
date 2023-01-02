@@ -8,7 +8,7 @@
         </div>
         <div class="body">
             <form action="<?php echo($_SERVER["PHP_SELF"]); ?>" method="POST">
-            
+                <p class="form-text">Username :</p>
         
             </form>
         </div>
