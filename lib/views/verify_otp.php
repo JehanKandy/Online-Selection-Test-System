@@ -11,7 +11,7 @@
                 <p class="form-text">Enter OTP : </p>
                 <input type="number" name="check_otp" id="" class="form-input">
 
-                <input type="submit" value="Verify OTP" name="verify_otp" class="btn btn-priamry" style="margin-top: 10px;">
+                <input type="submit" value="Verify OTP" name="verify_otp" class="btn btn-primary" style="margin-top: 10px;">
             </form>            
         </div>
     </div>
