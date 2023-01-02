@@ -127,5 +127,8 @@ font-family: 'Teko', sans-serif;
     .login-content .body{
         padding: 30px;
     }
+    .reg-btns{
+        width: 48%;
+    }
 }
 
