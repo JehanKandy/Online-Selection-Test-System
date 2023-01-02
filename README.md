@@ -9,7 +9,7 @@ Online Selection Examination System
   - project Start
   - lib/layouts/header.php
   - lib/layouts/footer.php
-  - css
+  - css/style.css
 
 
 <h1>Developers</h1>
