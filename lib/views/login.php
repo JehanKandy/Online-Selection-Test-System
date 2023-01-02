@@ -7,7 +7,10 @@
             <i class="fas fa-user-alt"></i> Login Here
         </div>
         <div class="body">
-            hi
+            <form action="<?php echo($_SERVER["PHP_SELF"]); ?>" method="POST">
+            
+        
+            </form>
         </div>
     </div>
 </div>
