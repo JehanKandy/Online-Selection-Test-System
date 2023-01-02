@@ -67,6 +67,7 @@ font-family: 'Teko', sans-serif;
 }
 .login-btn{
     margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 /* 
@@ -92,7 +93,15 @@ font-family: 'Teko', sans-serif;
     ***************************************************************************************
 */
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 820px) {}
+@media only screen and (min-device-width: 481px) and (max-device-width: 820px) {
+    .login-content{
+        margin: 150px 50px 150px 50px;
+        border: 1px solid rgb(190, 190, 190);
+        width: 600px;
+        border-radius: 5px;
+        height: 100%;
+    }
+}
 
 
 /* 
