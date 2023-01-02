@@ -114,5 +114,16 @@ font-family: 'Teko', sans-serif;
     ***************************************************************************************
 */
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .login-content{
+        margin: 150px 10px 150px 10px;
+        border: 1px solid rgb(190, 190, 190);
+        width: 330px;
+        border-radius: 5px;
+        height: 100%;
+    }
+    .login-content .body{
+        padding: 30px;
+    }
+}
 
