@@ -20,7 +20,7 @@
 
             </form>
             <a href="reg.php" style="text-decoration: none; ">Forget Password</a>
-            <br> Don't have an account ? <a href="" style="text-decoration: none;">Create One</a>
+            <br> Don't have an account ? <a href="" style="text-decoration: none;">Sign Up</a>
         </div>
     </div>
 </div>
