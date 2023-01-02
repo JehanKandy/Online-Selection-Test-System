@@ -4,7 +4,7 @@
 <div class="container">
     <div class="login-content">
         <div class="title">
-            <i class="fas fa-user-alt"></i> Login Here
+            <i class="fas fa-user-plus"></i> Register Here
         </div>
         <div class="body">
             <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST" name="reg_form" onsubmit="return valodateReg();">
