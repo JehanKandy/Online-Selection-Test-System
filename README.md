@@ -8,6 +8,7 @@ Online Selection Examination System
   
   - project Start
   - lib/layouts/header.php
+  - lib/layouts/footer.php
 
 
 <h1>Developers</h1>
