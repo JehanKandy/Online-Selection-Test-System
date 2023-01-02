@@ -20,7 +20,7 @@
                 <p class="form-text" id="regcpass">Confirm Password</p>
                 <input type="password" id="Usercpass" class="form-input">
 
-                <p style="margin-top: 15px;"><input type="reset" value="Clear" class="btn btn-secondary"><input type="submit" value="Sign Up"></p>
+                <p style="margin-top: 15px;"><input type="reset" value="Clear" class="btn btn-secondary"><input type="submit" value="Sign Up" class="btn btn-success"></p>
             </form>
         </div>
     </div>
