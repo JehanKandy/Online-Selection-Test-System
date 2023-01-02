@@ -22,4 +22,59 @@ font-family: 'Teko', sans-serif;
 }
 .footer-hr{
     border-top: 2px solid rgb(184, 184, 184);
+    margin-top: -16px;
 }
+.home-content{
+    width: 100%;
+    height: 97vh;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    background-image: url("../images/exam1.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.home-content .title{
+    font-size: 45px;
+}
+.home-content .body{
+    margin-top: 10px;
+}
+
+/* 
+    ***************************************************************************************
+
+                             commen laptop screen and small screens
+
+                                            769px - 1400px
+
+    ***************************************************************************************
+*/
+
+@media only screen and (min-device-width: 821px) and (max-device-width: 1400px) {}
+  
+
+/* 
+    ***************************************************************************************
+
+                                        iPads, Tablets
+
+                                        481px — 768px
+
+    ***************************************************************************************
+*/
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 820px) {}
+
+
+/* 
+    ***************************************************************************************
+
+                                     commen mobile screen
+
+                                            320x480
+
+    ***************************************************************************************
+*/
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {}
+
