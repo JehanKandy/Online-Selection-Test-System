@@ -18,7 +18,12 @@
         if($check_user_nor == 0){
 
         }else{
-            return "<span style='red'>User Already Exists</span>";
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Username Error</strong>User Already Exists...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
         }
 
     }
