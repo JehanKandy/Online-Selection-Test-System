@@ -58,6 +58,18 @@
             $check_user_deactive = "SELECT * FROM user_tbl WHERE username = '$username' && user_pass = '$pass' && is_pending = 0 && is_active = 1";
             $check_user_deactive_result = mysqli_query($con, $check_user_deactive);
             $check_user_deactive_nor = mysqli_num_rows($check_user_deactive_result);
+
+            if($check_user_deactive_nor > 0){
+                return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Account Error</strong>Account Deactive...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+            }
+            else{
+                
+            }
         }
     }
 
