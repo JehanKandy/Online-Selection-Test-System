@@ -26,6 +26,7 @@
     - lib/function/config.php (UPDATE)
     - lib/function/function.php
     - lib/views/reg.php (UPDATE)
+    - lib/views/login.php (UPDATE)
 
 <h1>Developers</h1>
   <h4>JehanKandy</h4>
