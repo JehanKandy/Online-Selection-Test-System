@@ -16,9 +16,9 @@
         $check_user_row = mysqli_fetch_assoc($check_user_result);
 
         if($check_user_nor == 0){
-            
+
         }else{
-            return "<span style='red'>User Already Exists</span>"
+            return "<span style='red'>User Already Exists</span>";
         }
 
     }
