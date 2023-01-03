@@ -7,6 +7,15 @@
             <i class="fas fa-user-plus"></i> Register Here
         </div>
         <div class="body">
+            <?php 
+                include("../functon/function.php");
+
+                if(isset($_POST['register'])){
+                    $result = reg_user($_POST['uername'], $_POST['email'], md5($_POST['pass']));
+                    echo $result;
+                }
+            ?>
+
             <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST" name="reg_form" onsubmit="return valodateReg(); ">
                 <p class="form-text" id="regUser">Username :</p>
                 <input type="text" name="uername" id="Userreg" class="form-input">
@@ -24,7 +33,7 @@
                 <input type="password" id="Usercpass" class="form-input">
                 <p id="regcpassError"></p>
 
-                <p style="margin-top: 15px;"><input type="reset" value="Clear" class="btn btn-secondary reg-btns">&nbsp;&nbsp;<input type="submit" value="Sign Up" class="btn btn-success reg-btns"></p>
+                <p style="margin-top: 15px;"><input type="reset" value="Clear" class="btn btn-secondary reg-btns">&nbsp;&nbsp;<input type="submit" name="register" value="Sign Up" class="btn btn-success reg-btns"></p>
             </form>
 
             Already have an Account ? <a href="login.php" style="text-decoration: none;">Sign in</a>
