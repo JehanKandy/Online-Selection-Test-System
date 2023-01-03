@@ -15,7 +15,7 @@
         $check_user_nor = mysqli_num_rows($check_user_result);
 
         if($check_user_nor == 0){
-            $insert_user = "INSERT INTO user_tbl (username,email,user_pass,user_type,is_pending,is_active,join_date)VALUES('$username','$email','$pass','user',1,0,NOW())";
+            $insert_user = "INSERT INTO user_tbl (username,email,user_pass,user_type,is_pending,is_active,join_date)VALUES('$username','$email','$pass','student',1,0,NOW())";
             $insert_user_result = mysqli_query($con, $insert_user);
 
             if($insert_user_result){
