@@ -55,7 +55,7 @@
         if($check_user_pending_nor > 0){
             header("location:waiting_user.php");
         }else{
-            $check_user_deactive = "SELECT * FROM user_tbl WHERE username = '$username' && user_pass = '$pass' && is_pending = 0 && is_active = 1";
+            $check_user_deactive = "SELECT * FROM user_tbl WHERE username = '$username' && user_pass = '$pass' && is_pending = 0 && is_active = 0";
             $check_user_deactive_result = mysqli_query($con, $check_user_deactive);
             $check_user_deactive_nor = mysqli_num_rows($check_user_deactive_result);
 
@@ -68,7 +68,14 @@
             </div>";
             }
             else{
-                
+                $login_user = "SELECT * FROM user_tbl WHERE username = '$username' && user_pass = '$pass' && is_pending = 0 && is_active = 1";
+                $login_user_result = mysqli_query($con, $login_user);
+                $login_user_nor = mysqli_num_rows($login_user_result);
+                $login_user_row = mysqli_fetch_assoc($login_user_result);
+
+                if($login_user_nor > 0){
+                    
+                }
             }
         }
     }
