@@ -74,7 +74,14 @@
                 $login_user_row = mysqli_fetch_assoc($login_user_result);
 
                 if($login_user_nor > 0){
-                    
+
+                }else{
+                    return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                                <strong>Process Error</strong>Can not process Tsak...!
+                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                                </button>
+                        </div>";
                 }
             }
         }
