@@ -45,4 +45,8 @@
 
     }
 
+    function login_user($username, $pass){
+        $con = Connection();
+    }
+
 ?>
