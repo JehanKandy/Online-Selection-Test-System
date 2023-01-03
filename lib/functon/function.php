@@ -74,7 +74,20 @@
                 $login_user_row = mysqli_fetch_assoc($login_user_result);
 
                 if($login_user_nor > 0){
-
+                    if($login_user_row['user_type'] == "student"){
+                        setcookie('login',$login_user_row['email'],time()+60*60,'/');
+                        $_SESSION['LoginSession'] = $login_user_row['email'];
+                        header("location:../routes/student.php");
+                    }elseif($login_user_row['user_type'] == "teacher"){
+                        setcookie('login',$login_user_row['email'],time()+60*60,'/');
+                        $_SESSION['LoginSession'] = $login_user_row['email'];
+                        header("location:../routes/teacher.php");
+                    }
+                    elseif($login_user_row['user_type'] == "admin"){
+                        setcookie('login',$login_user_row['email'],time()+60*60,'/');
+                        $_SESSION['LoginSession'] = $login_user_row['email'];
+                        header("location:../routes/admin.php");
+                    }
                 }else{
                     return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
                                 <strong>Process Error</strong>Can not process Tsak...!
