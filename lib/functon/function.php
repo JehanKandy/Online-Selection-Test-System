@@ -19,9 +19,19 @@
             $insert_user_result = mysqli_query($con, $insert_user);
 
             if($insert_user_result){
-
+                return  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                        <strong>Successfully</strong>User Create Successfully <a href='login.php' style='text-decoration:none;'>Login</a>
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                        </button>
+                </div>";
             }else{
-
+                return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                        <strong>Sign Up Error</strong>Can not Process the Task...!
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                        </button>
+                </div>";
             }
 
         }else{
