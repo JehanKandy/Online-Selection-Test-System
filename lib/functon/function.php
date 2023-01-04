@@ -202,6 +202,8 @@
                 if($check_otp_user_row['otp_no'] == $otp_num){
                     $delete_otp = "DELETE FROM pass_reset_tbl WHERE email = '$email'";
                     $delete_otp_result = mysqli_query($con, $delete_otp);
+
+                    header("location:update_pass.php");
                 }else{
                     return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
                             <strong>Process Error</strong> Can not Process Task..!
