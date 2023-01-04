@@ -180,6 +180,23 @@
 
     function verify_otp($otp_num){
         $con = Connection();
+
+        if(empty($otp_num)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>OTP Error</strong> OTP Can not be empty..!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+
+        else{
+            $email = strval($_SESSION['resetPass']);
+
+            $check_otp_user = "SELECT * FROM pass_reset_tbl WHERE email = '$email'";
+            $check_otp_user_reuslt = mysqli_query($con, $check_otp_user);
+
+        }
     }
 
 ?>
