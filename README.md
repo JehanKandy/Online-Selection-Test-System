@@ -30,6 +30,7 @@
    - lib/views/login.php (UPDATE)
    - css/style.css (UPDATE)
    - lib/views/waiting.php (UPDATE)
+   - lib/views/forget_pass.php (UPDATE)
 
 <h1>Developers</h1>
   <h4>JehanKandy</h4>
