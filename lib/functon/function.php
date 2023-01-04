@@ -220,8 +220,12 @@
                         </button>
                 </div>";
             }
-
         }
     }
+
+    function update_password($username,$email,$pass,$cpass){
+        $con = Connection();
+    }
+
 
 ?>
