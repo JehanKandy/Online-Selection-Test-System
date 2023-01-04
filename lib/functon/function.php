@@ -111,14 +111,10 @@
     function request_otp($username, $email){
         $con = Connection();
 
-        $check_user_otp = "SELECT * FROM user_tbl WHERE username='$username' && email='$email' && is_pending = 0 && is_active = 0";
-        $check_user_otp_result = mysqli_query($con, $check_user_otp);
-        $check_user_otp_nor = mysqli_num_rows($check_user_otp_result);
-        
 
         if(empty($username)){
             return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                    <strong>Username Error</strong>Username Does not Exist..!
+                    <strong>Username Error</strong> Username Can not be empty..!
                     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                     <span aria-hidden='true'>&times;</span>
                     </button>
@@ -126,12 +122,29 @@
         }
         if(empty($email)){
             return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                    <strong>Email Error</strong>Email Does not Exist..!
+                    <strong>Email Error</strong> Email Can not be empty..!
                     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                     <span aria-hidden='true'>&times;</span>
                     </button>
             </div>";
         }
+
+        $check_user_otp = "SELECT * FROM user_tbl WHERE username='$username' && email='$email' && is_pending = 0 && is_active = 1";
+        $check_user_otp_result = mysqli_query($con, $check_user_otp);
+        $check_user_otp_nor = mysqli_num_rows($check_user_otp_result);
+        $check_user_otp_row = mysqli_fetch_assoc($check_user_otp_result);
+        
+        if($check_user_otp_nor > 0){
+
+        }else{
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>User Error</strong> User Does not Exist..!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+
     }
 
 ?>
