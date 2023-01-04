@@ -135,7 +135,8 @@
         $check_user_otp_row = mysqli_fetch_assoc($check_user_otp_result);
         
         if($check_user_otp_nor > 0){
-
+            $otp_number = rand(10000,99999);
+            
         }else{
             return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
                     <strong>User Error</strong> User Does not Exist..!
