@@ -159,6 +159,9 @@
                 }
                 else{
                     $insert_otp = "INSERT INTO pass_reset_tbl(username,email,otp_no,get_date)VALUES('$username','$email','$pass_otp',NOW())";
+                    $insert_otp_result = mysqli_query($con, $insert_otp);
+
+                    header("location:verify_otp.php");
                 }
             }
             
