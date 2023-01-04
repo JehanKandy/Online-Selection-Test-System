@@ -195,6 +195,19 @@
 
             $check_otp_user = "SELECT * FROM pass_reset_tbl WHERE email = '$email'";
             $check_otp_user_reuslt = mysqli_query($con, $check_otp_user);
+            $check_otp_user_row = mysqli_fetch_assoc($check_otp_user_reuslt);
+            $check_otp_user_nor = mysqli_num_rows($check_otp_user_reuslt);
+
+            if($check_otp_user_nor > 0){
+                
+            }else{
+                return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                        <strong>OTP Error</strong> Can not Find OTP..!
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                        </button>
+                </div>";
+            }
 
         }
     }
