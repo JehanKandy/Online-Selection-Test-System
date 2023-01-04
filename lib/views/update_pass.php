@@ -1,12 +1,27 @@
 <?php include("../layouts/header.php"); ?>
 <link rel="stylesheet" href="../../css/style.css">
 
+<?php 
+    include("../functon/function.php");
+
+    if(empty($_SESSION['resetPass'])){
+        header("location:login.php");
+    }
+?>
+
 <div class="container">
     <div class="login-content">
         <div class="title">
             <i class="fas fa-key"></i> Update Password
         </div>
         <div class="body">
+            <?php 
+                if(isset($_POST['update_pass'])){
+                    $result = update_password($_POST['pass_username'], $_POST['pass_email'], md5($_POST['pass_pass']), md5($_POST['pass_cpass']));
+                    echo $result;
+                }
+            
+            ?>
             <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
                 <p class="form-text">Username : </p>
                 <input type="text" name="pass_username" id="" class="form-input">
