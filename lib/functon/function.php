@@ -199,7 +199,16 @@
             $check_otp_user_nor = mysqli_num_rows($check_otp_user_reuslt);
 
             if($check_otp_user_nor > 0){
-                
+                if($check_otp_user_row['otp_no'] == $otp_num){
+
+                }else{
+                    return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                            <strong>Process Error</strong> Can not Process Task..!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span>
+                            </button>
+                    </div>";
+                }
             }else{
                 return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
                         <strong>OTP Error</strong> Can not Find OTP..!
