@@ -16,11 +16,11 @@
                 }           
             ?>
 
-            <form action="<?php echo($_SERVER['PHP_SLEF']); ?>" method="POST">
+            <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
                 <p class="form-text">Username : </p>
                 <input type="text" name="otp_username" id="" class="form-input">
 
-                <p class="form-text">Password : </p>
+                <p class="form-text">Email : </p>
                 <input type="email" name="otp_email" id="" class="form-input">
 
                 <input type="submit" value="Request OTP" class="btn btn-primary" name="get_otp" style="margin-top: 10px;">
