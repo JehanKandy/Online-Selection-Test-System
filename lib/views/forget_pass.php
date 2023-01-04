@@ -7,6 +7,15 @@
             <i class="fas fa-key"></i> Get OTP
         </div>
         <div class="body">
+            <?php 
+                include("../functon/function.php");
+
+                if(isset($_POST['get_otp'])){
+                    $result = request_otp($_POST['otp_username'], $_POST['otp_email']);
+                    echo $result;
+                }           
+            ?>
+
             <form action="<?php echo($_SERVER['PHP_SLEF']); ?>" method="POST">
                 <p class="form-text">Username : </p>
                 <input type="text" name="otp_username" id="" class="form-input">
