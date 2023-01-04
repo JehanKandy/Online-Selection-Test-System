@@ -178,4 +178,8 @@
 
     }
 
+    function verify_otp($otp_num){
+        $con = Connection();
+    }
+
 ?>
