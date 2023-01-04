@@ -161,6 +161,8 @@
                     $insert_otp = "INSERT INTO pass_reset_tbl(username,email,otp_no,get_date)VALUES('$username','$email','$pass_otp',NOW())";
                     $insert_otp_result = mysqli_query($con, $insert_otp);
 
+                    setcookie('ResetPass',$check_user_otp_row['email'],time()+60*2,'/');
+                    $_SESSION['resetPass'] = $check_user_otp_row['email'];
                     header("location:verify_otp.php");
                 }
             }
