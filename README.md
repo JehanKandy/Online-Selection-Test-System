@@ -32,7 +32,8 @@
    - lib/views/waiting.php (UPDATE)
    - lib/views/forget_pass.php (UPDATE)
    - lib/views/verify_otp.php (UPDATE)
-
+   - lib/views/update_pass.php (UPDATE)
+   
 <h1>Developers</h1>
   <h4>JehanKandy</h4>
 
