@@ -17,6 +17,7 @@
             
             ?>
 
+            
             <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
                 <p class="form-text">Enter OTP : </p>
                 <input type="number" name="check_otp" id="" class="form-input">
