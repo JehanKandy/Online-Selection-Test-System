@@ -157,6 +157,9 @@
                             </button>
                     </div>";
                 }
+                else{
+                    $insert_otp = "INSERT INTO pass_reset_tbl(username,email,otp_no,get_date)VALUES('$username','$email','$pass_otp',NOW())";
+                }
             }
             
         }else{
