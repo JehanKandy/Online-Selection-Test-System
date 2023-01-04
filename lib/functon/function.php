@@ -136,6 +136,28 @@
         
         if($check_user_otp_nor > 0){
             $otp_number = rand(10000,99999);
+            $pass_otp = md5($otp_number);
+
+            $recever = $email;
+            $subject = "Password Reset";
+            $body = "OTP For Resent Password";
+            $body .= "use the OTP to update Password";
+            $sender = "From:jehankandy@gmail.com";
+
+            if(mail($recever,$subject,$body,$sender)){
+                $check_otp_db = "SELECT * FROM pass_reset_tbl WHERE username ='$username' && email = '$email'";
+                $check_otp_db_result = mysqli_query($con, $check_otp_db);
+                $check_otp_db_nor = mysqli_num_rows($check_otp_db_result);
+                
+                if($check_otp_db_nor > 0){
+                    return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                            <strong>Process Error</strong> Can not Process Task..!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span>
+                            </button>
+                    </div>";
+                }
+            }
             
         }else{
             return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
