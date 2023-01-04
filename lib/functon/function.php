@@ -141,7 +141,7 @@
             $recever = $email;
             $subject = "Password Reset";
             $body = "OTP For Resent Password";
-            $body .= "use the OTP to update Password";
+            $body .= " use the OTP to update Password" .$otp_number;
             $sender = "From:jehankandy@gmail.com";
 
             if(mail($recever,$subject,$body,$sender)){
