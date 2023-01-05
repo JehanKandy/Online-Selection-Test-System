@@ -15,7 +15,13 @@
 
         <div class="body">
             <h3>Studnet details</h3>
-
+        
+        
+            <!--
+                code of update user data only using one php page
+                -------- Begin ------------------------
+             -->
+             
             <?php 
                 if(isset($_POST['update_user'])){
                     $result = update_user_value($_POST['update_data']);
