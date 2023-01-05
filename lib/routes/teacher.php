@@ -17,7 +17,8 @@
             Teacher
         </div>
         <div class="body">
-<!--
+        <hr>
+            <!--
                 code of update user data only using one php page
                 -------- Begin ------------------------
 
@@ -61,6 +62,14 @@
                 ------- End ------------------------
                 code of update user data only using one php page
             -->
+        </div>
+        <hr>
+
+        <div class="question-add">
+            <div class="title">Add Questions</div>
+            <div class="body">
+                <a href="add_question.php"><button class="btn btn-primary">Add Questions</button></a>
+            </div>
         </div>
     </div>
 </div>
