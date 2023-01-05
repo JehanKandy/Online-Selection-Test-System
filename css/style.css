@@ -88,6 +88,17 @@ font-family: 'Teko', sans-serif;
 .std-content .body{
     margin: 20px 0 20px 0;
 }
+.std-content h3{
+    color: green;
+}
+.view-text{
+    font-size: 20px;
+}
+.view-data{
+    font-size: 20px;
+    color: blue;
+    margin-left: 10px;
+}
 /* 
     ***************************************************************************************
 
