@@ -413,7 +413,7 @@
     }
 
 
-    function update_data_to_table(){
+    function update_data_to_table($username, $email, $address, $nic, $dob, $mobile){
         $con = Connection();
     }
 
