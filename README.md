@@ -44,6 +44,7 @@
    - lib/function/function.php (UPDATE)
    - css/style.css (UPDATE)
    - lib/views/logout.php (UPDATE)
+
    
 <h1>Developers</h1>
   <h4>JehanKandy</h4>
