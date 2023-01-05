@@ -291,9 +291,15 @@
         }
     }
 
-    function view_student_data(){
+    function view_all_user_data(){
         $con = Connection();
+
+        $login_email = strval($_SESSION['LoginSession']);
+
+        $select_all_user = "SELECT * FROM user_tbl WHERE username = '$login_email' && is_pending = 0 && is_active = 0";
+        $select_all_user_result = mysqli_query($con, $select_all_user);
     }
+
 
 
 ?>
