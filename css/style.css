@@ -1,193 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Kdam+Thmor+Pro&family=Roboto+Flex:opsz@8..144&family=Rubik&family=Teko:wght@300&display=swap');
+<?php include("../layouts/header.php"); ?>
+<link rel="stylesheet" href="../../css/style.css">
+<?php include("../layouts/nav_loged.php"); ?>
 
-/*
-
-use font families
-
-font-family: 'Bebas Neue', cursive;
-font-family: 'Fjalla One', sans-serif;
-font-family: 'Kdam Thmor Pro', sans-serif;
-font-family: 'Roboto Flex', sans-serif;
-font-family: 'Rubik', sans-serif;
-font-family: 'Teko', sans-serif;
-*/
-
-
-.footer-content{
-    text-align: center;
-    font-family: 'Rubik', sans-serif;
-    padding: 10px 0 10px 0;
-    background-color: rgb(241, 241, 241);
-    margin-top: -16px;
-}
-.footer-hr{
-    border-top: 2px solid rgb(184, 184, 184);
-    margin-top: -16px;
-}
-.home-content{
-    width: 100%;
-    height: 97vh;
-    text-align: center;
-    font-family: 'Rubik', sans-serif;
-    background-image:  -webkit-linear-gradient(rgba(63, 63, 63, 0.938), rgba(63, 63, 63, 0.938)), url("../images/exam1.jpg");
-    background-position: center;
-    background-size: cover;
-    color: white;
-}
-.home-content .title{
-    font-size: 45px;
-    padding-top: 200px;
-}
-.home-content .body{
-    margin-top: 10px;
-}
-.login-content{
-    margin: 150px 250px 150px 250px;
-    border: 1px solid rgb(190, 190, 190);
-    width: 600px;
-    border-radius: 5px;
-    height: 100%;
-}
-.login-content .title{
-    background-color: rgb(235, 235, 235);
-    padding: 15px;
-}
-.login-content .body{
-    padding: 50px;
-}
-.login-content .body form .form-text{
-    font-family: 'Rubik', sans-serif;
-    margin-top: 10px;
-}
-.form-input{
-    width: 100%;
-    height: 40px;
-    border: 1px solid rgba(179, 179, 179, 0.884);
-    border-radius: 2px;
-}
-.login-btn{
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-.reg-btns{
-    width: 49%;
-}
-.waiting-msg{
-    font-size: 20px;
-    font-weight: 400;
-}
-.waiting-btn{
-    margin-top: 10px;
-}
-.std-content{
-    margin: 50px 0 50px 0;
-}
-.std-content .title{
-    font-size: 35px;
-}
-.std-content .body{
-    margin: 20px 0 20px 0;
-}
-.std-content h3{
-    color: green;
-}
-.view-text{
-    font-size: 20px;
-}
-.view-data{
-    font-size: 20px;
-    color: blue;
-    margin-left: 10px;
-}
-.nav-content{
-    padding: 15px 0 15px 0;
-    background-color: rgb(247, 247, 247);
-    border-bottom: 1px solid rgb(194, 194, 194);
-}
-
-.username-login{
-    margin: 0px 10px 0 75%;
-}
-.exam-info{
-    padding-top: 15px;
-}
-.exam-info .title{
-    color: red;
-    padding-bottom: 5px;
-}
-.exam-info .body{
-    padding-bottom: 10px;
-}
-.exam-content{
-    padding: 50px 0 60px 0;
-}
-.exam-content .title{
-    font-size: 40px;
-    text-align: center;
-}
-/* 
-    ***************************************************************************************
-
-                             commen laptop screen and small screens
-
-                                            769px - 1400px
-
-    ***************************************************************************************
-*/
-
-@media only screen and (min-device-width: 821px) and (max-device-width: 1400px) {}
-  
-
-/* 
-    ***************************************************************************************
-
-                                        iPads, Tablets
-
-                                        481px — 768px
-
-    ***************************************************************************************
-*/
-
-@media only screen and (min-device-width: 481px) and (max-device-width: 820px) {
-    .login-content{
-        margin: 150px 50px 150px 50px;
-        border: 1px solid rgb(190, 190, 190);
-        width: 600px;
-        border-radius: 5px;
-        height: 100%;
+<?php 
+    if(empty($_SESSION['LoginSession'])){
+        header("location:../views/login.php");
     }
-    .username-login{
-        margin: 0px 10px 0 60%;
-    }
-}
+    
+    techer_access();
+?>
 
 
-/* 
-    ***************************************************************************************
+<div class="teacher-content">
+    <div class="container">
+        <div class="title">
+            Teacher
+        </div>
+        <div class="body">
+        <hr>
+            <!--
+                code of update user data only using one php page
+                -------- Begin ------------------------
 
-                                     commen mobile screen
+                * can use for any user type (user, admin)
+             -->
 
-                                            320x480
+             <?php 
+                if(isset($_POST['update_user'])){
+                    $result = update_user_value($_POST['update_data']);
+                    echo $result;
+                }
+            ?>
 
-    ***************************************************************************************
-*/
+            <?php 
+                if(isset($_POST['update_user_data_infor'])){
+                    $result = update_data_to_table($_POST['update_username'], $_POST['update_address'], $_POST['update_nic'], $_POST['update_dob'], $_POST['update_mobile']);
+                    echo $result;
+                }
+            
+            ?>
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .login-content{
-        margin: 150px 10px 150px 10px;
-        border: 1px solid rgb(190, 190, 190);
-        width: 330px;
-        border-radius: 5px;
-        height: 100%;
-    }
-    .login-content .body{
-        padding: 30px;
-    }
-    .reg-btns{
-        width: 48%;
-    }
-    .username-login{
-        margin: 0px 10px 0 15%;
-    }
-}
+            <?php 
+                if(isset($_POST['update_user'])){
+                    update_user_data();                  
 
+                }
+                else{
+                    view_all_user_data();
+
+                    ?>                        
+                        <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
+                            <input type="hidden" name="update_data" value="1">
+                            <input type="submit" value="Update Data" name="update_user" class="btn btn-primary" style="margin-top: 15px;">        
+                        </form>
+                    <?php 
+                }
+            
+            ?>
+
+            <!--
+                ------- End ------------------------
+                code of update user data only using one php page
+            -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="../../js/script.js"></script>
+<?php include("../layouts/footer.php"); ?>
