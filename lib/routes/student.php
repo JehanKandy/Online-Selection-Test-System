@@ -17,20 +17,33 @@
         <div class="body">
             <h3>Studnet details</h3>
 
-            <?php view_all_user_data(); ?>
+
+            <?php 
+
+                if(isset($_POST['update_user'])){
+                    update_user_data();
+
+                }
+                else{
+                    view_all_user_data();
+
+                    ?>                        
+                        <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
+                            <input type="hidden" name="update_data" value="1">
+                            <input type="submit" value="Update Data" name="update_user" class="btn btn-primary" style="margin-top: 15px;">        
+                        </form>
+                    <?php 
+                }
+            
+            ?>
 
             <?php 
                 if(isset($_POST['update_user'])){
                     $result = update_user_value($_POST['update_data']);
                     echo $result;
                 }
-
             ?>
 
-            <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
-                <input type="hidden" name="update_data" value="1">
-                <input type="submit" value="Update Data" name="update_user" class="btn btn-primary" style="margin-top: 15px;">        
-            </form>
 
         </div>
     </div>
