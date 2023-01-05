@@ -324,6 +324,10 @@
                         <td><span class='view-text'>Date of birth : <span></td>
                         <td><span class='view-data'>".$user_data['dob']."</span></td>
                     </tr>
+                    <tr>
+                        <td><span class='view-text'>Contact Number : <span></td>
+                        <td><span class='view-data'>".$user_data['mobile_no']."</span></td>
+                    </tr>
                 </table>
             
             ";
