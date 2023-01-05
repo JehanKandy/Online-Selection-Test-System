@@ -291,7 +291,7 @@
         }
     }
 
-    function view_all_user_data($update_value){
+    function view_all_user_data(){
         $con = Connection();
 
         $login_email = strval($_SESSION['LoginSession']);
@@ -340,7 +340,12 @@
                 </button>
         </div>";
         }
+    }
 
+    function update_user_value($update_value){
+        $con = Connection();
+
+        $_SESSION['userUpdateValue'] = $update_value;
     }
 
 
