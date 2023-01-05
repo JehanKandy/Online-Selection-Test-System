@@ -70,7 +70,7 @@
                     *IMPORTANT*
                 </div>
                 <div class="body">
-                    Befor the test, READ THIS carefully,
+                    <b>Befor the test, READ THIS carefully,</b>
                     <br>
                     <ul>
                         <li>Student can attempt to the exam only one time.</li>
@@ -79,8 +79,11 @@
                         <li>After 2 hours the answers will submit automatically</li>
                         <li>After you answered to the exam you must click the finish button to get marks</li>
                     </ul>
+
+                    <a href="exam.php"><button class="btn btn-danger">Attempt to the Exam</button></a>
                     
                 </div>
+                <hr>
             </div>
 
         </div>
