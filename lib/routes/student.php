@@ -17,11 +17,16 @@
         <div class="body">
             <h3>Studnet details</h3>
 
+            <?php 
+                if(isset($_POST['update_user_data_infor'])){
+                    $result = 
+                }
+            
+            ?>
 
             <?php 
-
                 if(isset($_POST['update_user'])){
-                    update_user_data();
+                    update_user_data();                  
 
                 }
                 else{
