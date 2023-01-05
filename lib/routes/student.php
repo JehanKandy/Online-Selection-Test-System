@@ -19,6 +19,11 @@
 
             <?php view_all_user_data(); ?>
         
+            <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
+                <input type="hidden" name="update_data" value="1">
+                <input type="submit" value="Update Data" name="update_user" class="btn btn-primary" style="margin-top: 15px;">        
+            </form>
+
         </div>
     </div>
 </div>
