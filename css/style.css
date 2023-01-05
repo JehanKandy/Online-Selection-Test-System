@@ -100,10 +100,20 @@ font-family: 'Teko', sans-serif;
     margin-left: 10px;
 }
 .nav-content{
-    margin-top: 15px;
+    padding: 15px 0 15px 0;
+    background-color: rgb(247, 247, 247);
+    border-bottom: 1px solid rgb(194, 194, 194);
 }
+
 .username-login{
     margin: 0px 10px 0 75%;
+}
+.exam-info{
+    padding-top: 15px;
+}
+.exam-info .title{
+    color: red;
+    padding-bottom: 5px;
 }
 /* 
     ***************************************************************************************
