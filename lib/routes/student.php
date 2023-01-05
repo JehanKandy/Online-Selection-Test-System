@@ -97,12 +97,14 @@
                                     <th>Username</th>
                                     <th>Marks</th>
                                     <th>Attempt time</th>
+                                    <th>Finish time</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Jehan</td>
                                     <td>40</td>
+                                    <td>2023/01/05 23:10:52</td>
                                     <td>2023/01/05 23:10:52</td>
                                 </tr>
                             </tbody>
