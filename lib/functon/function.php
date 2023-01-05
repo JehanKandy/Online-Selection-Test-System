@@ -301,6 +301,17 @@
         $select_all_user_nor = mysqli_num_rows($select_all_user_result);
         $user_data = mysqli_fetch_assoc($select_all_user_result);
 
+        if($select_all_user_nor > 0){
+            
+        }else{
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Password Error</strong> Password not Match...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+
     }
 
 
