@@ -277,7 +277,6 @@
                 $update_pass_result = mysqli_query($con,$update_pass);
 
                 setcookie('ResetPass',NULL,time()-60*60,'/');
-                session_start() ;
                 session_destroy() ;
                 header('location:login.php');
 
@@ -290,6 +289,10 @@
                 </div>";
             }
         }
+    }
+
+    function view_student_data(){
+        $con = Connection();
     }
 
 
