@@ -7,6 +7,9 @@
         <div class="title">
             Online Selection Examination
         </div>
+        <div class="body">
+            
+        </div>
     </div>
 </div>
 
