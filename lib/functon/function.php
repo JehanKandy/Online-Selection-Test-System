@@ -302,7 +302,15 @@
         $user_data = mysqli_fetch_assoc($select_all_user_result);
 
         if($select_all_user_nor > 0){
-            $view_user = "";
+            $view_user = "
+                <table border='0'>
+                    <tr>
+                        <td>Username : </td>
+                        <td>".$user_data['username']."</td>
+                    </tr>
+                </table>
+            
+            ";
 
             echo $view_user;
         }else{
