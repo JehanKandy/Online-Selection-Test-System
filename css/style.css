@@ -99,6 +99,12 @@ font-family: 'Teko', sans-serif;
     color: blue;
     margin-left: 10px;
 }
+.nav-content{
+    margin-top: 15px;
+}
+.username-login{
+    margin: 0px 10px 0 75%;
+}
 /* 
     ***************************************************************************************
 
@@ -156,6 +162,9 @@ font-family: 'Teko', sans-serif;
     }
     .reg-btns{
         width: 48%;
+    }
+    .username-login{
+        margin: 0px 10px 0 15%;
     }
 }
 
