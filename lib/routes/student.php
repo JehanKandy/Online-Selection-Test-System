@@ -74,24 +74,8 @@
                     <ul>
                         <li>Student can attempt to the exam only one time.</li>
                         <li>The exam contain 40 MCQ questions</li>
-                        <li>the exam will conduct 2 hours </li>
-                        <li>After 2 hours the answers will submit automatically</li>
-                        <li>After you answered to the exam you must click the finish button to get marks</li>
-                        <li><span style="color:red"><b>If you can not answer to the questions within time you can not get marks</b></span></li>
                     </ul>
 
-                    <?php 
-                        if(isset($_POST['attempt'])){
-                            $_SESSION['examStart'] = time();
-                            $_SESSION['examEnd'] = $_SESSION['examStart'] + (10);                            
-                            header("location:exam.php");                            
-                        }
-                    ?>
-
-                    <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
-                        <input type="submit" value="Attempt to Examination" class="btn btn-danger" name="attempt">
-                    </form>
-                    
                     
 
                 </div>
