@@ -90,7 +90,24 @@
                 <div class="title">Your Result</div>
 
                 <div class="body">
-
+                    <div class="table-responsive-lg">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Marks</th>
+                                    <th>Attempt time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jehan</td>
+                                    <td>40</td>
+                                    <td>2023/01/05 23:10:52</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
