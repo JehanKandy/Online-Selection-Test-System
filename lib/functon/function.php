@@ -298,6 +298,9 @@
 
         $select_all_user = "SELECT * FROM user_tbl WHERE username = '$login_email' && is_pending = 0 && is_active = 0";
         $select_all_user_result = mysqli_query($con, $select_all_user);
+        $select_all_user_nor = mysqli_num_rows($select_all_user_result);
+        $user_data = mysqli_fetch_assoc($select_all_user_result);
+
     }
 
 
