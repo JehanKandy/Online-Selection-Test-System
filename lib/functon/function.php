@@ -291,7 +291,7 @@
         }
     }
 
-    function view_all_user_data(){
+    function view_all_user_data($update_value){
         $con = Connection();
 
         $login_email = strval($_SESSION['LoginSession']);
@@ -328,8 +328,7 @@
                         <td><span class='view-text'>Contact Number : <span></td>
                         <td><span class='view-data'>".$user_data['mobile_no']."</span></td>
                     </tr>
-                </table>
-            
+                </table>            
             ";
 
             echo $view_user;
