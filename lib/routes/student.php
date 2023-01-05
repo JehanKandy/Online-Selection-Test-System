@@ -20,8 +20,10 @@
             <!--
                 code of update user data only using one php page
                 -------- Begin ------------------------
+
+                * can user for any user type (user, admin)
              -->
-             
+
             <?php 
                 if(isset($_POST['update_user'])){
                     $result = update_user_value($_POST['update_data']);
