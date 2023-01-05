@@ -75,8 +75,8 @@
                         <li>Student can attempt to the exam only one time.</li>
                         <li>The exam contain 40 MCQ questions</li>
                     </ul>
-
                     
+                    <a href="exam.php"><button class="btn btn-danger">Attempt To Examination</button></a>
 
                 </div>
                 <hr>
