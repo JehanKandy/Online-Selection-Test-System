@@ -413,5 +413,9 @@
     }
 
 
+    function update_data_to_table(){
+        $con = Connection();
+    }
+
 
 ?>
