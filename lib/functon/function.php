@@ -348,6 +348,10 @@
         $_SESSION['userUpdateValue'] = $update_value;
     }
 
+    function update_user_date(){
+        $con = Connection();
+    }
+
 
 
 ?>
