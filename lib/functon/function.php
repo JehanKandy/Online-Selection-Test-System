@@ -417,7 +417,7 @@
         $con = Connection();
         $login_email = strval($_SESSION['LoginSession']);
 
-        $update_user = "UPDATE user_tbl SET username = '$usernmae', user_address='$address', nic = '$nic', dob = '$dob', mobile_no = '$mobile' WHERE email = '$login_email'";
+        $update_user = "UPDATE user_tbl SET username = '$username', user_address='$address', nic = '$nic', dob = '$dob', mobile_no = '$mobile' WHERE email = '$login_email'";
         $update_user_result = mysqli_query($con, $update_user);
     }
 
