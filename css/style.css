@@ -115,6 +115,12 @@ font-family: 'Teko', sans-serif;
     color: red;
     padding-bottom: 5px;
 }
+.exam-info .body{
+    padding-bottom: 10px;
+}
+.exam-content{
+    padding: 50px 0 60px 0;
+}
 /* 
     ***************************************************************************************
 
