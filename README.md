@@ -37,6 +37,7 @@
    
    <h4> 04 January 2023</h4>
    - lib/routes/student.php
+   - lib/routes/teacher.php
    
 <h1>Developers</h1>
   <h4>JehanKandy</h4>
