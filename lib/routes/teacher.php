@@ -10,6 +10,20 @@
 ?>
 
 
+<div class="teacher-content">
+    <div class="container">
+        <div class="title">
+            Teacher
+        </div>
+        <div class="body">
+
+        </div>
+    </div>
+</div>
+
+
+
+
 
 <script src="../../js/script.js"></script>
 <?php include("../layouts/footer.php"); ?>
