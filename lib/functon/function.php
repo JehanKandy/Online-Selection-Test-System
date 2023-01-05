@@ -426,7 +426,13 @@
 
         $login_email = strval($_SESSION['LoginSession']);
 
-        
+        $select_access = "SELECT * FROM user_tbl WHERE email = '$login_email'";
+        $select_access_result = mysqli_query($con, $select_access);
+        $select_access_row = mysqli_fetch_assoc($select_access_result);
+
+        if($select_access_row['user_type'] != 'teacher'){
+            header("location:../views/logout.php");
+        }
     }
 
 
