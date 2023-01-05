@@ -64,6 +64,12 @@
 
 
 
+            <hr>
+            <div class="exam-info">
+                <div class="title">
+                    *IMPORTANT*
+                </div>
+            </div>
 
         </div>
     </div>
