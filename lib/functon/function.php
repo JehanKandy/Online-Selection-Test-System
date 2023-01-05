@@ -355,11 +355,40 @@
 
         $select_all_user = "SELECT * FROM user_tbl WHERE email = '$login_email' && is_pending = 0 && is_active = 1";
         $select_all_user_result = mysqli_query($con, $select_all_user);
-        $select_all_user_nor = mysqli_num_rows($select_all_user_result);
         $user_data = mysqli_fetch_assoc($select_all_user_result);
 
         if($update_value == 1){
-            echo "h00000000i";
+            $view_user_update = "
+                <table border='0'>
+                    <tr>
+                        <td><span class='view-text'>Username : <span></td>
+                        <td><span class='view-data'>".$user_data['username']."<span></td>
+                    </tr>
+                    <tr>
+                        <td><span class='view-text'>Email : <span></td>
+                        <td><span class='view-data'>".$user_data['email']."</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class='view-text'>Address : <span></td>
+                        <td><span class='view-data'>".$user_data['user_address']."</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class='view-text'>NIC : <span></td>
+                        <td><span class='view-data'>".$user_data['nic']."</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class='view-text'>Date of birth : <span></td>
+                        <td><span class='view-data'>".$user_data['dob']."</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class='view-text'>Contact Number : <span></td>
+                        <td><span class='view-data'>".$user_data['mobile_no']."</span></td>
+                    </tr>
+                </table>            
+            ";
+
+            echo $view_user_update;
+
         }else{
             return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
                 <strong>Password Error</strong> Password not Match...!
