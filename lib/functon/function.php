@@ -80,7 +80,7 @@
                         setcookie('login',$login_user_row['email'],time()+60*60,'/');
                         $_SESSION['LoginSession'] = $login_user_row['email'];
                         header("location:../routes/student.php");
-                    }elseif($login_user_row['user_type'] == "teacher"){
+                     }elseif($login_user_row['user_type'] == "teacher"){
                         setcookie('login',$login_user_row['email'],time()+60*60,'/');
                         $_SESSION['LoginSession'] = $login_user_row['email'];
                         header("location:../routes/teacher.php");
@@ -161,7 +161,7 @@
                     $insert_otp = "INSERT INTO pass_reset_tbl(username,email,otp_no,get_date)VALUES('$username','$email','$pass_otp',NOW())";
                     $insert_otp_result = mysqli_query($con, $insert_otp);
 
-                    setcookie('ResetPass',$check_user_otp_row['email'],time()+60*2,'/');
+                    setcookie('ResetPass',$check_user_otp_row['email'],time()+10,'/');
                     $_SESSION['resetPass'] = $check_user_otp_row['email'];
                     header("location:verify_otp.php");
                 }
@@ -267,15 +267,27 @@
             </div>";
         }
         else{
-            $check_user = "SELECT * FROM user_tbl WHERE username='$username' && user_pass='$email'";
+            $check_user = "SELECT * FROM user_tbl WHERE username='$username' && email='$email' && is_pending = 0 && is_active = 1";
             $check_user_result = mysqli_query($con, $check_user);
-            $check_user_row = mysqli_num_rows($check_user_result);
-            $check_user_nor = mysqli_fetch_assoc($check_user_result);
+            $check_user_row = mysqli_fetch_assoc($check_user_result);
+            $check_user_nor = mysqli_num_rows($check_user_result);
 
             if($check_user_nor > 0){
+                $update_pass = "UPDATE user_tbl SET user_pass = '$pass' WHERE username='$username' && email = '$email'";
+                $update_pass_result = mysqli_query($con,$update_pass);
+
+                setcookie('ResetPass',NULL,time()-60*60,'/');
+                session_start() ;
+                session_destroy() ;
+                header('location:login.php');
 
             }else{
-
+                return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                        <strong>Password Error</strong> Password not Match...!
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                        </button>
+                </div>";
             }
         }
     }
