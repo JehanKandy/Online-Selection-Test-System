@@ -75,7 +75,7 @@
                     <ul>
                         <li>Student can attempt to the exam only one time.</li>
                         <li>The exam contain 40 MCQ questions</li>
-                        <li>the exam will conduct 2 houres</li>
+                        <li>the exam will conduct 2 hours </li>
                         <li>After 2 hours the answers will submit automatically</li>
                         <li>After you answered to the exam you must click the finish button to get marks</li>
                     </ul>
