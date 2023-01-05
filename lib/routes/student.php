@@ -78,6 +78,7 @@
                         <li>the exam will conduct 2 hours </li>
                         <li>After 2 hours the answers will submit automatically</li>
                         <li>After you answered to the exam you must click the finish button to get marks</li>
+                        <li><span style="color:red"><b>If you can not answer to the questions within time you can not get marks</b></span></li>
                     </ul>
 
                     <a href="exam.php"><button class="btn btn-danger">Attempt to the Exam</button></a>
