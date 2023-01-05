@@ -1,3 +1,5 @@
+
+
 <?php
 
     use FTP\Connection;
@@ -360,30 +362,36 @@
         if($update_value == 1){
             $view_user_update = "
                 <table border='0'>
-                    <tr>
-                        <td><span class='view-text'>Username : <span></td>
-                        <td><span class='view-data'>".$user_data['username']."<span></td>
-                    </tr>
-                    <tr>
-                        <td><span class='view-text'>Email : <span></td>
-                        <td><span class='view-data'>".$user_data['email']."</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class='view-text'>Address : <span></td>
-                        <td><span class='view-data'>".$user_data['user_address']."</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class='view-text'>NIC : <span></td>
-                        <td><span class='view-data'>".$user_data['nic']."</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class='view-text'>Date of birth : <span></td>
-                        <td><span class='view-data'>".$user_data['dob']."</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class='view-text'>Contact Number : <span></td>
-                        <td><span class='view-data'>".$user_data['mobile_no']."</span></td>
-                    </tr>
+                    <form action='' method='POST'>
+                        <tr>
+                            <td><span class='view-text'>Username : <span></td>
+                            <td><input type='text' name='update_username' class='form-input' value='".$user_data['username']."'></td>
+                        </tr>
+                        <tr>
+                            <td><span class='view-text'>Email : <span></td>
+                            <td><input type='email' name='update_email' class='form-input' value='".$user_data['email']."'></td>
+                        </tr>
+                        <tr>
+                            <td><span class='view-text'>Address : <span></td>
+                            <td><input type='text' name='update_address' class='form-input' value='".$user_data['user_address']."'></td>
+
+                        </tr>
+                        <tr>
+                            <td><span class='view-text'>NIC : <span></td>
+                            <td><input type='text' name='update_nic' class='form-input' value='".$user_data['nic']."'></td>
+
+                        </tr>
+                        <tr>
+                            <td><span class='view-text'>Date of birth : <span></td>
+                            <td><input type='date' name='update_dob' class='form-input'></td>
+
+                        </tr>
+                        <tr>
+                            <td><span class='view-text'>Contact Number : <span></td>
+                            <td><input type='text' name='update_mobile' class='form-input' value='".$user_data['mobile_no']."'></td>
+
+                        </tr>
+                    </form>
                 </table>            
             ";
 
