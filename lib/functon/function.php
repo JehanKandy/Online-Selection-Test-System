@@ -369,7 +369,7 @@
                         </tr>
                         <tr>
                             <td><span class='view-text'>Email : <span></td>
-                            <td><input type='email' name='update_email' class='form-input' value='".$user_data['email']."'></td>
+                            <td><input type='email' name='update_email' class='form-input' value='".$user_data['email']."' disabled></td>
                         </tr>
                         <tr>
                             <td><span class='view-text'>Address : <span></td>
@@ -413,8 +413,12 @@
     }
 
 
-    function update_data_to_table($username, $email, $address, $nic, $dob, $mobile){
+    function update_data_to_table($username, $address, $nic, $dob, $mobile){
         $con = Connection();
+        $login_email = strval($_SESSION['LoginSession']);
+
+        $update_user = "UPDATE user_tbl SET username = '$usernmae', user_address='$address', nic = '$nic', dob = '$dob', mobile_no = '$mobile' WHERE email = '$login_email'";
+        $update_user_result = mysqli_query($con, $update_user);
     }
 
 
