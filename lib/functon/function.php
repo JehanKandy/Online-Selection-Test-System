@@ -302,7 +302,9 @@
         $user_data = mysqli_fetch_assoc($select_all_user_result);
 
         if($select_all_user_nor > 0){
-            
+            $view_user = "";
+
+            echo $view_user;
         }else{
             return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
                 <strong>Password Error</strong> Password not Match...!
