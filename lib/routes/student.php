@@ -21,7 +21,7 @@
                 code of update user data only using one php page
                 -------- Begin ------------------------
 
-                * can user for any user type (user, admin)
+                * can use for any user type (user, admin)
              -->
 
             <?php 
