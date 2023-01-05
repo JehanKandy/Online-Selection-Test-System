@@ -40,6 +40,7 @@
    - lib/routes/teacher.php
    - lib/routes/admin.php
    - lib/views/nav_loged.php
+   - lib/function/function.php (UPDATE)
    
 <h1>Developers</h1>
   <h4>JehanKandy</h4>
