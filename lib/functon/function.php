@@ -309,8 +309,20 @@
                         <td><span class='view-data'>".$user_data['username']."<span></td>
                     </tr>
                     <tr>
-                        <td><span class='view-text'>Email : <span><td>
+                        <td><span class='view-text'>Email : <span></td>
                         <td><span class='view-data'>".$user_data['email']."</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class='view-text'>Address : <span></td>
+                        <td><span class='view-data'>".$user_data['user_address']."</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class='view-text'>NIC : <span></td>
+                        <td><span class='view-data'>".$user_data['nic']."</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class='view-text'>Date of birth : <span></td>
+                        <td><span class='view-data'>".$user_data['dob']."</span></td>
                     </tr>
                 </table>
             
