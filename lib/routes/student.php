@@ -16,6 +16,8 @@
 
         <div class="body">
             <h3>Studnet details</h3>
+
+            <?php view_all_user_data(); ?>
         
         </div>
     </div>
