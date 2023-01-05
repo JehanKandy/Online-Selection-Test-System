@@ -1,4 +1,3 @@
-<?php include("../layouts/header.php"); ?>
 <link rel="stylesheet" href="../../css/style.css">
 <?php include("../layouts/nav_loged.php"); ?>
 
@@ -81,7 +80,19 @@
                         <li><span style="color:red"><b>If you can not answer to the questions within time you can not get marks</b></span></li>
                     </ul>
 
-                    <a href="exam.php"><button class="btn btn-danger">Attempt to the Exam</button></a>
+                    <?php 
+                        if(isset($_POST['attempt'])){
+                            $_SESSION['examStart'] = time();
+                            $_SESSION['examEnd'] = $_SESSION['examStart'] + (10);                            
+                            header("location:exam.php");                            
+                        }
+                    ?>
+
+                    <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
+                        <input type="submit" value="Attempt to Examination" class="btn btn-danger" name="attempt">
+                    </form>
+                    
+                    
 
                 </div>
                 <hr>
