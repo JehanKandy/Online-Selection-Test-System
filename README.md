@@ -39,6 +39,7 @@
    - lib/routes/student.php
    - lib/routes/teacher.php
    - lib/routes/admin.php
+   - lib/views/nav_loged.php
    
 <h1>Developers</h1>
   <h4>JehanKandy</h4>
