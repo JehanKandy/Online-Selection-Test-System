@@ -308,6 +308,10 @@
                         <td><span class='view-text'>Username : <span></td>
                         <td><span class='view-data'>".$user_data['username']."<span></td>
                     </tr>
+                    <tr>
+                        <td><span class='view-text'>Email : <span><td>
+                        <td><span class='view-data'>".$user_data['email']."</span></td>
+                    </tr>
                 </table>
             
             ";
