@@ -80,7 +80,7 @@
                         <li>After you answered to the exam you must click the finish button to get marks</li>
                     </ul>
 
-                    <a href="exam.php"><button class="btn btn-danger">Attempt to the Exam</button></a>
+                    <a href="exam.php"><button class="btn btn-danger" name="attempt_exam">Attempt to the Exam</button></a>
                     
                 </div>
                 <hr>
@@ -90,7 +90,7 @@
                 <div class="title">Your Result</div>
 
                 <div class="body">
-                    
+
                 </div>
             </div>
 
