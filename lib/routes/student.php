@@ -3,7 +3,6 @@
 <?php include("../layouts/nav_loged.php"); ?>
 
 <?php 
-    include("../functon/function.php");
     if(empty($_SESSION['LoginSession'])){
         header("location:../views/login.php");
     }
@@ -18,8 +17,15 @@
             <h3>Studnet details</h3>
 
             <?php 
+                if(isset($_POST['update_user'])){
+                    $result = update_user_value($_POST['update_data']);
+                    echo $result;
+                }
+            ?>
+
+            <?php 
                 if(isset($_POST['update_user_data_infor'])){
-                    $result = update_data_to_table($_POST['update_username'], $_POST['update_email'], $_POST['update_address'], $_POST['update_nic'], $_POST['update_dob'], $_POST['update_mobile']);
+                    $result = update_data_to_table($_POST['update_username'], $_POST['update_address'], $_POST['update_nic'], $_POST['update_dob'], $_POST['update_mobile']);
                     echo $result;
                 }
             
@@ -43,12 +49,7 @@
             
             ?>
 
-            <?php 
-                if(isset($_POST['update_user'])){
-                    $result = update_user_value($_POST['update_data']);
-                    echo $result;
-                }
-            ?>
+
 
 
         </div>
