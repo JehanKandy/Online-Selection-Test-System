@@ -136,6 +136,9 @@ font-family: 'Teko', sans-serif;
         border-radius: 5px;
         height: 100%;
     }
+    .username-login{
+        margin: 0px 10px 0 60%;
+    }
 }
 
 
