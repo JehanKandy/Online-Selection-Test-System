@@ -344,12 +344,25 @@
 
     function update_user_value($update_value){
         $con = Connection();
-
         $_SESSION['userUpdateValue'] = $update_value;
     }
 
-    function update_user_date(){
+    function update_user_data(){
         $con = Connection();
+
+        $update_value = strval($_SESSION['userUpdateValue']);
+        $login_email = strval($_SESSION['LoginSession']);
+
+        $select_all_user = "SELECT * FROM user_tbl WHERE email = '$login_email' && is_pending = 0 && is_active = 1";
+        $select_all_user_result = mysqli_query($con, $select_all_user);
+        $select_all_user_nor = mysqli_num_rows($select_all_user_result);
+        $user_data = mysqli_fetch_assoc($select_all_user_result);
+
+        if($update_value == 1){
+            echo "h00000000i";
+        }else{
+
+        }
     }
 
 
