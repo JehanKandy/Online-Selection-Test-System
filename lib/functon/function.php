@@ -421,5 +421,13 @@
         $update_user_result = mysqli_query($con, $update_user);
     }
 
+    function techer_access(){
+        $con = Connection();
+
+        $login_email = strval($_SESSION['LoginSession']);
+
+        
+    }
+
 
 ?>
