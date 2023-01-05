@@ -9,7 +9,6 @@
     }
 ?>
 
-
 <div class="std-content">
     <div class="container">
         <div class="title">Welcome Come to Online Selection Test</div>
@@ -20,7 +19,8 @@
 
             <?php 
                 if(isset($_POST['update_user_data_infor'])){
-                    $result = 
+                    $result = update_data_to_table($_POST['update_username'], $_POST['update_email'], $_POST['update_address'], $_POST['update_nic'], $_POST['update_dob'], $_POST['update_mobile']);
+                    echo $result;
                 }
             
             ?>
