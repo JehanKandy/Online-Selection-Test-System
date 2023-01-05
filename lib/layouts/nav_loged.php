@@ -1,7 +1,9 @@
 <nav>
     <div class="nav-content">
         <div class="container">
-            Online Selection Test
+            <div class="title">
+                Online Selection Test
+            </div>
 
             <span class="username-login">
                 <?php 
