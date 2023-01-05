@@ -69,6 +69,18 @@
                 <div class="title">
                     *IMPORTANT*
                 </div>
+                <div class="body">
+                    Befor the test, READ THIS carefully,
+                    <br>
+                    <ul>
+                        <li>Student can attempt to the exam only one time.</li>
+                        <li>The exam contain 40 MCQ questions</li>
+                        <li>the exam will conduct 2 houres</li>
+                        <li>After 2 hours the answers will submit automatically</li>
+                        <li>After you answered to the exam you must click the finish button to get marks</li>
+                    </ul>
+                    
+                </div>
             </div>
 
         </div>
