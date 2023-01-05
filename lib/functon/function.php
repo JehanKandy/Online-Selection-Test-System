@@ -296,7 +296,7 @@
 
         $login_email = strval($_SESSION['LoginSession']);
 
-        $select_all_user = "SELECT * FROM user_tbl WHERE username = '$login_email' && is_pending = 0 && is_active = 0";
+        $select_all_user = "SELECT * FROM user_tbl WHERE email = '$login_email' && is_pending = 0 && is_active = 1";
         $select_all_user_result = mysqli_query($con, $select_all_user);
         $select_all_user_nor = mysqli_num_rows($select_all_user_result);
         $user_data = mysqli_fetch_assoc($select_all_user_result);
@@ -305,8 +305,8 @@
             $view_user = "
                 <table border='0'>
                     <tr>
-                        <td>Username : </td>
-                        <td>".$user_data['username']."</td>
+                        <td><span class='view-text'>Username : <span></td>
+                        <td><span class='view-data'>".$user_data['username']."<span></td>
                     </tr>
                 </table>
             
