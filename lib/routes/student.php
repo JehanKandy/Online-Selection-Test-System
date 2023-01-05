@@ -86,6 +86,14 @@
                 <hr>
             </div>
 
+            <div class="result-view">
+                <div class="title">Your Result</div>
+
+                <div class="body">
+                    
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
