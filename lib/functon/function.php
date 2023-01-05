@@ -389,7 +389,12 @@
                         <tr>
                             <td><span class='view-text'>Contact Number : <span></td>
                             <td><input type='text' name='update_mobile' class='form-input' value='".$user_data['mobile_no']."'></td>
+                        </tr>
 
+                        <tr>
+                            <td colspan='2'>
+                                <input type='submit' name='update_user_data' class='btn btn-success' value='Update Data'>
+                            </td>
                         </tr>
                     </form>
                 </table>            
