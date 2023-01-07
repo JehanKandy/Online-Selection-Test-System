@@ -489,6 +489,18 @@
         }
 
         $check_question = "SELECT * FROM selection_test WHERE question = '$question'";
+        $check_question_result = mysqli_query($con, $check_question);
+        $check_question_nor = mysqli_num_rows($check_question_result);
+
+
+        if($check_question_nor > 0){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Question Answer </strong> Question Already Added...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
 
 
 
