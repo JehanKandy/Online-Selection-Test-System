@@ -48,14 +48,6 @@
    
    <h4> 07 January 2023</h4>
    
-   - lib/routes/exam.php
-   - lib/routes/student.php
-   - lib/routes/teacher.php
-   - lib/routes/admin.php
-   - lib/views/nav_loged.php
-   - lib/function/function.php (UPDATE)
-   - css/style.css (UPDATE)
-   - lib/views/logout.php (UPDATE)
 
    
 <h1>Developers</h1>
