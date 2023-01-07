@@ -12,6 +12,7 @@
 
 <div class="add-question">
     <div class="container">
+        <a href="teacher.php"><button class="btn btn-primary">Back</button></a>
         <div class="title">
             Add Question
         </div>
@@ -41,7 +42,6 @@
         </div>
     </div>
 </div>
-
 
 
 <script src="../../js/script.js"></script>
