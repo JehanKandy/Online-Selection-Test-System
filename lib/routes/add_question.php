@@ -17,9 +17,16 @@
             Add Question
         </div>
         <div class="body">
+            <?php 
+                if(isset($_POST['add_question'])){
+                    $result = add_question($_POST['question'], $_POST['option1'], $_POST['option2'], $_POST['option3'], $_POST['option4'], $_POST['canswer']);
+                    echo $result;
+                }
+            ?>
+
             <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
                 <p class="form-text">Question</p>
-                <textarea class="form-control" rows="3"></textarea>
+                <textarea class="form-control" rows="3" name="question"></textarea>
 
                 <p class="form-text">Options</p>
                 
