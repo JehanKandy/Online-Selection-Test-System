@@ -71,6 +71,16 @@
                 <a href="add_question.php"><button class="btn btn-primary">Add Questions</button></a>
             </div>
         </div>
+        <hr>
+
+        <div class="added-question">
+            <div class="title">
+                Added Question 
+            </div>
+            <div class="body">
+                <a href="view_added_question.php"><button class="btn btn-success">View All</button></a>
+            </div>
+        </div>
     </div>
 </div>
 
