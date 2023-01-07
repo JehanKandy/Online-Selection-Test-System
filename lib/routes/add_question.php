@@ -44,10 +44,7 @@
 
                 <p class="form-text">Correct Answer</p>
 
-                <p> 1. Option 1 &nbsp; <input type="radio" name="canswer" id="" value="1"></p>
-                <p> 2. Option 2 &nbsp; <input type="radio" name="canswer" id="" value="2"></p>
-                <p> 3. Option 3 &nbsp; <input type="radio" name="canswer" id="" value="3"></p>
-                <p> 4. Option 4 &nbsp; <input type="radio" name="canswer" id="" value="4"></p>
+                    <p><input type="number" name="canswer" id="" class="form-control"></p>
 
                 <input type="submit" value="Add Question" name="add_question" class="btn btn-success">
             </form>
