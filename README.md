@@ -46,7 +46,7 @@
    - css/style.css (UPDATE)
    - lib/views/logout.php (UPDATE)
    
-   <h4> 05 January 2023</h4>
+   <h4> 07 January 2023</h4>
    
    - lib/routes/exam.php
    - lib/routes/student.php
