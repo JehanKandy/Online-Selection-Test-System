@@ -437,6 +437,49 @@
 
     function add_question($question, $op1, $op2, $op3, $op4, $cop){
         $con = Connection();
+
+        if(empty($question)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Question</strong> Qestion Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+        if(empty($op1)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Option 1 </strong> Option 1 Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+        if(empty($op2)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Option 2 </strong> Option 2 Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+        if(empty($op3)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Option 3 </strong> Option 3 Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+        if(empty($op4)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Option 4 </strong> Option 4 Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+
+
     }
 
 ?>
