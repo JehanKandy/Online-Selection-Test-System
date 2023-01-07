@@ -24,7 +24,7 @@
                 }
             ?>
 
-            <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
+            <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST" name="question_form">
                 <p class="form-text">Question</p>
                 <textarea class="form-control" rows="3" name="question" id="question"></textarea>
                 <p id="errorQues"></p>
