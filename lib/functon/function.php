@@ -435,5 +435,8 @@
         }
     }
 
+    function add_question($question, $op1, $op2, $op3, $op4, $cop){
+        $con = Connection();
+    }
 
 ?>
