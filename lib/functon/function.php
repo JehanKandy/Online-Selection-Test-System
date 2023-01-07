@@ -488,10 +488,15 @@
         </div>";
         }
 
-        $check_question = "SELECT * FROM selection_test WHERE question = '$question'";
+        $check_question = "SELECT * FROM question_tbl WHERE question = '$question'";
         $check_question_result = mysqli_query($con, $check_question);
         $check_question_nor = mysqli_num_rows($check_question_result);
 
+        $add_username = "SELECT * FROM user_tbl WHERE username = '$login_email'";
+        $add_username_result = mysqli_query($con, $add_username);
+        $add_username_row = mysqli_fetch_assoc($add_username_result);
+
+        $add_user = $add_username_row['username'];
 
         if($check_question_nor > 0){
             return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
@@ -500,6 +505,26 @@
                     <span aria-hidden='true'>&times;</span>
                     </button>
             </div>";
+        }
+        else{
+            $insert_question = "INSERT INTO question_tbl(question,option1,option2,option3,option4,correct_option,question_status,add_date,add_user)VALUES('$question','$op1','$op2','$op3','$op4','$cop',1,NOW(),'$add_user')";
+            $insert_question_result = mysqli_query($con, $insert_question);
+
+            if(!$insert_question_result){
+                return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                        <strong>ERROR </strong> Error While adding data to database...!
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                        </button>
+                </div>";
+            }else{
+                return  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                        <strong>Successful </strong> Question Added Successfully...!
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                        </button>
+                </div>";
+            }
         }
 
 
