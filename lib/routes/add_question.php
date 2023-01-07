@@ -16,7 +16,19 @@
             Add Question
         </div>
         <div class="body">
+            <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
+                <p class="form-text">Question</p>
+                <textarea class="form-control" rows="3"></textarea>
 
+                <p class="form-text">Options</p>
+                
+                <ol class="question-option">
+                    <li><p><input type="text" name="option1" id="" class="form-control"></li></p>
+                    <li><p><input type="text" name="option2" id="" class="form-control"></li></p>
+                    <li><p><input type="text" name="option3" id="" class="form-control"></li></p>
+                    <li><p><input type="text" name="option4" id="" class="form-control"></li></p>
+                </ol>
+            </form>
         </div>
     </div>
 </div>
