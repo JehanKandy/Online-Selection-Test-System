@@ -27,15 +27,19 @@
             <form action="<?php echo($_SERVER['PHP_SELF']); ?>" method="POST">
                 <p class="form-text">Question</p>
                 <textarea class="form-control" rows="3" name="question" id="question"></textarea>
-                <p class="errorQues"></p>
+                <p id="errorQues"></p>
 
                 <p class="form-text">Options</p>
                 
                 <ol class="question-option">
                     <li><p><input type="text" name="option1" id="op1" class="form-control"></li></p>
+                    <p id="op1Error"></p>
                     <li><p><input type="text" name="option2" id="op2" class="form-control"></li></p>
+                    <p id="op2Error"></p>
                     <li><p><input type="text" name="option3" id="op3" class="form-control"></li></p>
+                    <p id="op3Error"></p>
                     <li><p><input type="text" name="option4" id="op4" class="form-control"></li></p>
+                    <p id="op4Error"></p>
                 </ol>
 
                 <p class="form-text">Correct Answer</p>
