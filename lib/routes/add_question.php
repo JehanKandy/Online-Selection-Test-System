@@ -28,6 +28,15 @@
                     <li><p><input type="text" name="option3" id="" class="form-control"></li></p>
                     <li><p><input type="text" name="option4" id="" class="form-control"></li></p>
                 </ol>
+
+                <p class="form-text">Correct Answer</p>
+
+                <p> 1. Option 1 &nbsp; <input type="radio" name="canswer" id="" value="1"></p>
+                <p> 2. Option 2 &nbsp; <input type="radio" name="canswer" id="" value="2"></p>
+                <p> 3. Option 3 &nbsp; <input type="radio" name="canswer" id="" value="3"></p>
+                <p> 4. Option 4 &nbsp; <input type="radio" name="canswer" id="" value="4"></p>
+
+                <input type="submit" value="Add Question" name="add_question" class="btn btn-success">
             </form>
         </div>
     </div>
