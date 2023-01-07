@@ -437,6 +437,7 @@
 
     function add_question($question, $op1, $op2, $op3, $op4, $cop){
         $con = Connection();
+        $login_email = strval($_SESSION['LoginSession']);
 
         if(empty($question)){
             return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
@@ -487,7 +488,8 @@
         </div>";
         }
 
-        
+        $check_question = "SELECT * FROM selection_test WHERE question = '$question'";
+
 
 
     }
