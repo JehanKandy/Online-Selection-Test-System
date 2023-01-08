@@ -86,6 +86,7 @@
                                     <th>Question</th>
                                     <th>Add User</th>
                                     <th>Add Time</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,6 +94,7 @@
                                     <td>Jehan</td>
                                     <td>40</td>
                                     <td>2023/01/05 23:10:52</td>
+                                    <td>view</td>
                                 </tr>
                             </tbody>
                         </table>
