@@ -86,6 +86,8 @@
                                     <th>Question</th>
                                     <th>Add User</th>
                                     <th>Add Time</th>
+                                    <th>Question Stats</th>
+                                    <th>Panding</th>
                                     <th></th>
                                 </tr>
                             </thead>
