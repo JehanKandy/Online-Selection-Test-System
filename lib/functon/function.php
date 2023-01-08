@@ -439,7 +439,6 @@
         $con = Connection();
         $login_email = strval($_SESSION['LoginSession']);
 
-        echo $login_email;
 
         if(empty($question)){
             return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
