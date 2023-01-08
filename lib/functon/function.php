@@ -509,7 +509,7 @@
             </div>";
         }
         else{
-            $insert_question = "INSERT INTO question_tbl(question,option1,option2,option3,option4,correct_option,question_status,add_date,add_user)VALUES('$question','$op1','$op2','$op3','$op4','$cop',1,NOW(),'$add_user')";
+            $insert_question = "INSERT INTO question_tbl(question,option1,option2,option3,option4,correct_option,question_status,question_panding,add_date,add_user)VALUES('$question','$op1','$op2','$op3','$op4','$cop',1,0,NOW(),'$add_user')";
             $insert_question_result = mysqli_query($con, $insert_question);
 
             if(!$insert_question_result){
