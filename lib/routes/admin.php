@@ -7,6 +7,7 @@
         header("location:../views/login.php");
     }
     
+    admin_access();
 
 ?>
 
