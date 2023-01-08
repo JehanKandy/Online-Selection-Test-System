@@ -435,6 +435,20 @@
         }
     }
 
+    function admin_access(){
+        $con = Connection();
+
+        $login_email = strval($_SESSION['LoginSession']);
+
+        $select_access = "SELECT * FROM user_tbl WHERE email = '$login_email'";
+        $select_access_result = mysqli_query($con, $select_access);
+        $select_access_row = mysqli_fetch_assoc($select_access_result);
+
+        if($select_access_row['user_type'] != 'admin'){
+            header("location:../views/logout.php");
+        }
+    }
+
     function add_question($question, $op1, $op2, $op3, $op4, $cop){
         $con = Connection();
         $login_email = strval($_SESSION['LoginSession']);
@@ -595,7 +609,28 @@
                 elseif($user_row['user_type'] == 'student'){
                     $all_user .= "<td><h4><span class='badge badge-warning'>Student</span></h4></td>";
                 }
+ 
+                if($user_row['is_active'] == 1){
+                    $all_user .="<td><h4><span class='badge badge-success'>Active</span></h4></td>";
+                }
+                elseif($user_row['is_active'] == 0){
+                    $all_user .="<td><h4><span class='badge badge-danger'>Deactive</span></h4></td>";
+                }
+
+
+                if($user_row['is_pending'] == 1){
+                    $all_user .="<td><h4><span class='badge badge-danger'>Still Pending</span></h4></td>";
+                }
+                if($user_row['is_pending'] == 0){
+                    $all_user .="<td><h4><span class='badge badge-success'>Approved</span></h4></td>";
+                }
             
+            $all_user .="
+                <td>
+                    <a href='view_user.php?id=".$user_row['email']."'><button class='btn btn-primary'>View</button></a>
+                </td>
+            ";
+
 
             echo $all_user;
         }
