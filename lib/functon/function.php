@@ -488,6 +488,14 @@
                 </button>
         </div>";
         }
+        if($cop >= 4){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Error </strong> Wrong Option...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
 
         $check_question = "SELECT * FROM question_tbl WHERE question = '$question'";
         $check_question_result = mysqli_query($con, $check_question);
