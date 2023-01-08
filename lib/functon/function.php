@@ -516,7 +516,7 @@
             </div>";
         }
         else{
-            $insert_question = "INSERT INTO question_tbl(question,option1,option2,option3,option4,correct_option,question_status,question_panding,add_date,add_user)VALUES('$question','$op1','$op2','$op3','$op4','$cop',1,0,NOW(),'$add_user')";
+            $insert_question = "INSERT INTO question_tbl(question,option1,option2,option3,option4,correct_option,question_status,question_panding,add_date,add_user)VALUES('$question','$op1','$op2','$op3','$op4','$cop',0,1,NOW(),'$add_user')";
             $insert_question_result = mysqli_query($con, $insert_question);
 
             if(!$insert_question_result){
@@ -546,10 +546,24 @@
         while($question_row = mysqli_fetch_assoc($select_question_result)){
             $question_data = "
                 <tr>
-                    <td>Jeagdjhagsdjhgjha gsjhag jhsgdj hagjsh gdjhagsdjhan</td>
-                    <td>40</td>
-                    <td>2023/01/05 23:10:52</td>
-                    <td>view</td>
+                    <td>".$question_row['question']."</td>
+                    <td>".$question_row['add_user']."</td>
+                    <td>".$question_row['add_date']."</td>
+                    ";
+                        if($question_row['question_status'] == 1){
+                            $question_data .= "<td><h4><span class='badge badge-success'>Active</span></h4></td>";
+                        }
+                        elseif($question_row['question_status'] == 0){
+                            $question_data .= "<td><h4><span class='badge badge-danger'>Deactive</span></h4></td>";
+                        }
+
+                        if($question_row['question_panding'] == 0){
+                            $question_data .= "<td><h4><span class='badge badge-danger'>Still Pending</span></h4></td>";
+                        }
+
+            $question_data .= "
+                    
+                    <td></td>
                 </tr>";
 
             echo $question_data;
