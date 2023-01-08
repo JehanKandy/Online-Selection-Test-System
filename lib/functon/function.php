@@ -557,7 +557,10 @@
                             $question_data .= "<td><h4><span class='badge badge-danger'>Deactive</span></h4></td>";
                         }
 
-                        if($question_row['question_panding'] == 0){
+                        if($question_row['question_panding'] == 1){
+                            $question_data .= "<td><h4><span class='badge badge-success'>Approved</span></h4></td>";
+                        }
+                        elseif($question_row['question_panding'] == 0){
                             $question_data .= "<td><h4><span class='badge badge-danger'>Still Pending</span></h4></td>";
                         }
 
