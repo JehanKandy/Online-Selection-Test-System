@@ -564,9 +564,10 @@
                             $question_data .= "<td><h4><span class='badge badge-danger'>Still Pending</span></h4></td>";
                         }
 
-            $question_data .= "
-                    
-                    <td></td>
+            $question_data .= "                    
+                    <td>
+                        <a href='view_question.php?id=".$question_row['id']."'><button class='btn btn-success'>View</button></a>
+                    </td>
                 </tr>";
 
             echo $question_data;
