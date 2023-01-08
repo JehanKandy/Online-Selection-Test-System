@@ -439,6 +439,8 @@
         $con = Connection();
         $login_email = strval($_SESSION['LoginSession']);
 
+        echo $login_email;
+
         if(empty($question)){
             return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
                 <strong>Question</strong> Qestion Can not be Empty...!
@@ -492,7 +494,7 @@
         $check_question_result = mysqli_query($con, $check_question);
         $check_question_nor = mysqli_num_rows($check_question_result);
 
-        $add_username = "SELECT * FROM user_tbl WHERE username = '$login_email'";
+        $add_username = "SELECT * FROM user_tbl WHERE email = '$login_email'";
         $add_username_result = mysqli_query($con, $add_username);
         $add_username_row = mysqli_fetch_assoc($add_username_result);
 
@@ -526,8 +528,25 @@
                 </div>";
             }
         }
+    }
 
+    function view_add_question(){
+        $con = Connection();
 
+        $select_question = "SELECT * FROM question_tbl";
+        $select_question_result = mysqli_query($con, $select_question);
+
+        while($question_row = mysqli_fetch_assoc($select_question_result)){
+            $question_data = "
+                <tr>
+                    <td>Jeagdjhagsdjhgjha gsjhag jhsgdj hagjsh gdjhagsdjhan</td>
+                    <td>40</td>
+                    <td>2023/01/05 23:10:52</td>
+                    <td>view</td>
+                </tr>";
+
+            echo $question_data;
+        }
 
     }
 
