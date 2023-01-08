@@ -576,6 +576,29 @@
 
     function view_all_users(){
         $con = Connection();
+
+        $select_user = "SELECT * FROM user_tbl";
+        $select_user_result = mysqli_query($con, $select_user);
+
+        while($user_row = mysqli_fetch_assoc($select_user_result)){
+            $all_user = "
+                <tr>
+                    <td>".$user_row['username']."</td>
+                    <td>".$user_row['email']."</td>";
+
+                if($user_row['user_type'] == 'admin'){
+                    $all_user .= "<td><h4><span class='badge badge-warning'>Admin</span></h4></td>";
+                }
+                elseif($user_row['user_type'] == 'teacher'){
+                    $all_user .= "<td><h4><span class='badge badge-warning'>Teacher</span></h4></td>";
+                }
+                elseif($user_row['user_type'] == 'student'){
+                    $all_user .= "<td><h4><span class='badge badge-warning'>Student</span></h4></td>";
+                }
+            
+
+            echo $all_user;
+        }
     }
 
 
