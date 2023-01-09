@@ -664,6 +664,7 @@
         $con = Connection();
 
         $delete_id = $_GET['id'];
+        $_SESSION['DeleteID'] = $delete_id;
 
         echo $delete_id;
     }
@@ -863,5 +864,9 @@
         }
     }
 
+    function delete_user_data(){
+        $con = Connection();
 
+        $delete_id = strval($_SESSION['DeleteID']);
+    }
 ?>
