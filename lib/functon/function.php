@@ -897,7 +897,8 @@
 
         $delete_user = "DELETE FROM user_tbl WHERE email = '$delete_user_email'";        
         $delete_user_result = mysqli_query($con, $delete_user);
+        header("location:admin.php");
 
-        
+
     }
 ?>
