@@ -138,6 +138,18 @@ font-family: 'Teko', sans-serif;
     text-align: center;
     font-size: 35px;
 }
+.admin-content{
+    margin: 50px 0 50px 0;
+}
+.admin-content .title{
+    font-size: 50px;
+}
+.view-user{
+    margin: 50px 0 50px 0;
+}
+.view-user .title{
+    font-size: 50px;
+}
 /* 
     ***************************************************************************************
 
