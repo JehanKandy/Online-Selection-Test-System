@@ -709,6 +709,26 @@
             ";
         }
 
+        if($user_data_row['is_pending'] == 0){
+            $user_data_view .="
+                <p> User Status : </p>
+                    <h4><span class='badge badge-success'>Approved User</span></h4>
+                <form action='' method='POST'>
+                    <input type='hidden' value='1' name='to_pending'>
+                    <input type='submit' name='to_pending_form' class='btn btn-info' value='To Pending'>
+                </form>    
+            ";
+        }
+        elseif($user_data_row['is_pending'] == 1){
+            $user_data_view .="
+                <p> User Status : </p>
+                    <h4><span class='badge badge-info'>Still Pending User</span></h4>
+                <form action='' method='POST'>
+                    <input type='hidden' value='0' name='to_approved'>
+                    <input type='submit' name='to_approved_form' class='btn btn-success' value='To Approved'>
+                </form>    
+            ";
+        }
 
 
         echo $user_data_view;
