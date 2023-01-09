@@ -156,6 +156,12 @@ font-family: 'Teko', sans-serif;
 .delete-approvel .title{
     font-size: 40px;
 }
+.deleted-approvels{
+    margin: 50px 0 50px 0;
+}
+.deleted-approvels .title{
+    font-size: 40px;
+}
 /* 
     ***************************************************************************************
 
