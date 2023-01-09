@@ -918,4 +918,20 @@
             echo $deleted_approvels;
         }
     }
+
+    function view_all_questions(){
+        $con = Connection();
+
+        $all_question = "SELECT * FROM question_tbl";
+        $all_question_result = mysqli_query($con, $all_question);
+
+        while($all_question_row = mysqli_fetch_assoc($all_question_result)){
+            $all_question = "
+                
+            
+            ";
+
+            echo $all_question;
+        }
+    }
 ?>
