@@ -54,9 +54,12 @@
    - lib/function/function.php (UPDATE)
 
 
-   <h4> 09 January 2023</h4>
+   <h4> 08 January 2023</h4>
   
-   - lib/routes/view_user.php
+   - lib/routes/teacher.php (UPDATE)
+   - lib/function/function.php (UPDATE)
+   - lib/routes/admin.php (UPDATE)
+   - css/style.css (UPDATE)
 
    <h4> 09 January 2023</h4>
   
