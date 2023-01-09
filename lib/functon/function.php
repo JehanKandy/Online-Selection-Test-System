@@ -883,15 +883,18 @@
                 <input type='email' value='".$select_delete_user_row['email']."' class='form-control' disabled><br>
                 <input type='hidden' name='user_email' value='".$select_delete_user_row['email']."'>
 
-                
+
                 <input type='submit' name='delete_user' class='btn btn-danger' value='Delete Approvel'>
             </form>
-
-
-
         ";
 
         echo $delete_user;
+        
+    }
+
+    function delete_user($delete_user_email){
+        $con = Connection();
+
         
     }
 ?>
