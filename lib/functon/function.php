@@ -636,5 +636,12 @@
         }
     }
 
+    function view_user_email(){
+        $con = Connection();
+
+        $id = $_GET['id'];
+
+        echo $id;
+    }
 
 ?>
