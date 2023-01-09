@@ -688,6 +688,29 @@
             <input type='text' value='".$user_data_row['mobile_no']."' class='form-control' disabled> <br>
         ";
 
+        if($user_data_row['is_active'] == 1){
+            $user_data_view .="
+                <p> User Status : </p>
+                    <h4><span class='badge badge-success'>Active User</span></h4>
+                <form action='' method='POST'>
+                    <input type='hidden' value='0' name='to_deactive'>
+                    <input type='submit' name='to_deactive_form' class='btn btn-danger' value='To Dactive'>
+                </form>    
+            ";
+        }
+        elseif($user_data_row['is_active'] == 0){
+            $user_data_view .="
+                <p> User Status : </p>
+                    <h4><span class='badge badge-danger'>Deactive User</span></h4>
+                <form action='' method='POST'>
+                    <input type='hidden' value='1' name='to_active'>
+                    <input type='submit' name='to_active_form' class='btn btn-success' value='To Active'>
+                </form>    
+            ";
+        }
+
+
+
         echo $user_data_view;
     }
 
