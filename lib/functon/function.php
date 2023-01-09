@@ -875,9 +875,17 @@
 
         $delete_user = "
             <a href='admin.php'><button class='btn btn-primary' style='margin-top:10px; margin-bottom:25px;'>Back</button></a>
+            <form action='' method='POST'>
+                <p>Username : </p>
+                <input type='text' value='".$select_delete_user_row['username']."' class='form-control' disabled><br>
 
-            <p>Username : </p>
-            <input type='text' value='".$select_delete_user_row['username']."' class='form-control' disabled>
+                <p>Email : </p>
+                <input type='email' value='".$select_delete_user_row['email']."' class='form-control' disabled><br>
+
+                <input type='submit' name='delete_user' class='btn btn-danger' value='Delete Approvel'>
+            </form>
+
+
 
         ";
 
