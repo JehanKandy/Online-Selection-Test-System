@@ -868,5 +868,16 @@
         $con = Connection();
 
         $delete_id = strval($_SESSION['DeleteID']);
+
+        $select_delete_user = "SELECT * FROM user_tbl WHERE email = '$delete_id'";
+        $select_delete_user_result = mysqli_query($con,$select_delete_user);
+        $select_delete_user_row = mysqli_fetch_assoc($select_delete_user_result);
+
+        $delete_user = "
+            <a href='admin.php'><button class='btn btn-primary'>Back</button></a>
+        ";
+
+        echo $delete_user;
+        
     }
 ?>
