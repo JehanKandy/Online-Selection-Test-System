@@ -649,6 +649,12 @@
                         </td>
                     ";
                 }
+                elseif($user_row['is_pending'] == 0){
+                    $all_user .= "
+                        <td><span style='color:green;'>Active User</span></td>
+                    ";
+                }
+
 
             echo $all_user;
         }
