@@ -68,7 +68,7 @@
    - lib/routes/delete_approvel.php
    - lib/function/funtion.php (UPDATE)
    - lib/routes/admin.php (UPDATE)
-   - css/style.css
+   - css/style.css (UPDATE)
 
    
 <h1>Developers</h1>
