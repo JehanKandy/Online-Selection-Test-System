@@ -591,6 +591,8 @@
     function view_all_users(){
         $con = Connection();
 
+        $login_email = strval($_SESSION['LoginSession']);
+
         $select_user = "SELECT * FROM user_tbl";
         $select_user_result = mysqli_query($con, $select_user);
 
@@ -621,15 +623,24 @@
                 if($user_row['is_pending'] == 1){
                     $all_user .="<td><h4><span class='badge badge-danger'>Still Pending</span></h4></td>";
                 }
-                if($user_row['is_pending'] == 0){
+                elseif($user_row['is_pending'] == 0){
                     $all_user .="<td><h4><span class='badge badge-success'>Approved</span></h4></td>";
                 }
             
-            $all_user .="
-                <td>
-                    <a href='view_user.php?id=".$user_row['email']."'><button class='btn btn-primary'>View</button></a>
-                </td>
-            ";
+
+                if($user_row['email'] == $login_email){
+                    $all_user .="
+                        <td>
+                            <span style='color:red;'>Loged User</span>
+                        </td>";
+                }
+                else{
+                    $all_user .="
+                    <td>
+                        <a href='view_user.php?id=".$user_row['email']."'><button class='btn btn-primary'>View</button></a>
+                    </td>
+                ";
+                }
 
 
             echo $all_user;
@@ -650,13 +661,32 @@
 
         $id = strval($_SESSION['UserID']);
 
-        echo $id;
 
         $user_data_sql = "SELECT * FROM user_tbl WHERE email = '$id'";
         $user_data_sql_result = mysqli_query($con,$user_data_sql);
         $user_data_row = mysqli_fetch_assoc($user_data_sql_result);
 
-        $user_data_view = "";
+        $user_data_view = "
+            <a href='admin.php'><button class='btn btn-primary' style='margin-top:10px; margin-bottom:30px;'>Back</button></a>
+            
+            <p> Username :  </p>
+            <input type='text' value='".$user_data_row['username']."' class='form-control' disabled> <br>
+
+            <p> Email :  </p>
+            <input type='email' value='".$user_data_row['email']."' class='form-control' disabled> <br>
+
+            <p> Address :  </p>
+            <input type='text' value='".$user_data_row['user_address']."' class='form-control' disabled> <br>
+
+            <p> NIC :  </p>
+            <input type='text' value='".$user_data_row['nic']."' class='form-control' disabled> <br>
+            
+            <p> Data of Birth :  </p>
+            <input type='text' value='".$user_data_row['dob']."' class='form-control' disabled> <br>
+
+            <p> Mobile Number :  </p>
+            <input type='text' value='".$user_data_row['mobile_no']."' class='form-control' disabled> <br>
+        ";
 
         echo $user_data_view;
     }
