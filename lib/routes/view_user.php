@@ -11,5 +11,14 @@
 
 ?>
 
+<div class="view-user">
+    <div class="container">
+        <div class="title"></div>
+        <div class="body">
+            
+        </div>
+    </div>
+</div>
+
 <script src="../../js/script.js"></script>
 <?php include("../layouts/footer.php"); ?>
