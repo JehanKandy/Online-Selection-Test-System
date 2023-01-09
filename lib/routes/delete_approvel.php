@@ -13,10 +13,10 @@
 
 <div class="delete-approvel">
     <div class="container">
-        <div class="title">Delete Approval : </div>
+        <div class="title">Delete Approval : <?php delet_user_email();?></div>
         <hr>
         <div class="body">
-
+            <?php delete_user_data(); ?>
         </div>
     </div>
 </div>
