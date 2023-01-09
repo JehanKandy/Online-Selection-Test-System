@@ -736,6 +736,28 @@
 
     function to_deactive_user($id){
         $con = Connection();
+
+        $id = strval($_SESSION['UserID']);
+
+        $update_user = "UPDATE user_tbl SET is_active = '$id' WHERE email='$id'";
+        $update_user_result = mysqli_query($con, $update_user);
+
+        if(!$update_user_result){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Process Error </strong> Can not Process Task...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+        else{
+            return  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>Successful </strong> User Uppdate Sucessfully...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
     }
 
     function to_active_user($id){
