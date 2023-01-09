@@ -927,7 +927,20 @@
 
         while($all_question_row = mysqli_fetch_assoc($all_question_result)){
             $all_question = "
-                
+                <tr>
+                    <td>".$all_question_row['question']."</td>
+                    <td>".$all_question_row['add_user']."</td>";
+
+                    if($all_question_row['question_status'] == 1){
+                        $all_question .="<td><h4><span class='badge badge-success'>Active</span></h4></td>";
+                    }
+                    elseif($all_question_row['question_status'] == 0){
+                        $all_question .="<td><h4><span class='badge badge-danger'>Deactive</span></h4></td>";
+                    }
+
+            $all_question .="
+
+                </tr>
             
             ";
 
