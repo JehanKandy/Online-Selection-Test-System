@@ -5,8 +5,8 @@
         header("location:../views/login.php");
     }
     
-    admin_access();
-    techer_access();
+    teacher_admin_access();
+
 ?>
 
 <div class="all-question">
