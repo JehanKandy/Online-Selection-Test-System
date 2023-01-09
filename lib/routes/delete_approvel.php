@@ -13,6 +13,14 @@
 
 <div class="delete-approvel">
     <div class="container">
+        <?php 
+            if(isset($_POST['delete_user'])){
+                $result = delete_user($_POST['user_email']);
+                echo $result;
+            }
+        
+        ?>
+
         <div class="title">Delete Approval : <?php delet_user_email();?></div>
         <hr>
         <div class="body">
