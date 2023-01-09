@@ -7,8 +7,25 @@
         header("location:../views/login.php");
     }
     
-    techer_access();
+    admin_access();
 ?>
+
+<div class="table-responsive-lg">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Delete Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php all_deleted_approvels(); ?>
+        </tbody>
+    </table>
+</div>
+
+
 
 
 <script src="../../js/script.js"></script>
