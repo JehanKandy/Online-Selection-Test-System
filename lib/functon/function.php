@@ -914,6 +914,8 @@
                     <td>".$deleted_approvels_row['delete_date']."</td>
                 </tr>
             ";
+
+            echo $deleted_approvels;
         }
     }
 ?>
