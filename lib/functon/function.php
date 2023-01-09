@@ -898,7 +898,12 @@
         $delete_user = "DELETE FROM user_tbl WHERE email = '$delete_user_email'";        
         $delete_user_result = mysqli_query($con, $delete_user);
         header("location:admin.php");
+    }
 
+    function all_deleted_approvels(){
+        $con = Connection();
 
+        $deleted_approvels = "SELECT * FROM delete_approval_tbl";
+        $deleted_approvels_result = mysqli_query($con, $deleted_approvels);
     }
 ?>
