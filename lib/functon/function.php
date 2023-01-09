@@ -874,7 +874,11 @@
         $select_delete_user_row = mysqli_fetch_assoc($select_delete_user_result);
 
         $delete_user = "
-            <a href='admin.php'><button class='btn btn-primary'>Back</button></a>
+            <a href='admin.php'><button class='btn btn-primary' style='margin-top:10px; margin-bottom:25px;'>Back</button></a>
+
+            <p>Username : </p>
+            <input type='text' value='".$select_delete_user_row['username']."' class='form-control' disabled>
+
         ";
 
         echo $delete_user;
