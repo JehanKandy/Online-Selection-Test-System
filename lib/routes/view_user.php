@@ -11,6 +11,7 @@
 
 ?>
 
+
 <div class="view-user">
     <div class="container">
         <div class="title"> User : <?php view_user_email(); ?></div>
