@@ -14,7 +14,7 @@
 <div class="deleted-approvels">
     <div class="container">
         <div class="title">Deleted Approvals</div>
-    
+        <hr>
         <div class="body">
             <a href="admin.php"><button class="btn btn-primary" style="margin: 30px 0 30px 0;">Back</button></a>
 
