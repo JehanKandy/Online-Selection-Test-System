@@ -905,5 +905,15 @@
 
         $deleted_approvels = "SELECT * FROM delete_approval_tbl";
         $deleted_approvels_result = mysqli_query($con, $deleted_approvels);
+
+        while($deleted_approvels_row = mysqli_fetch_assoc($deleted_approvels_result)){
+            $deleted_approvels = "
+                <tr>
+                    <td>".$deleted_approvels_row['username']."</td>
+                    <td>".$deleted_approvels_row['email']."</td>
+                    <td>".$deleted_approvels_row['delete_date']."</td>
+                </tr>
+            ";
+        }
     }
 ?>
