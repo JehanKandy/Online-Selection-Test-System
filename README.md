@@ -55,9 +55,7 @@
 
    <h4> 09 January 2023</h4>
   
-   - lib/routes/add_question.php (UPDATE)
-   - css/style.css (UPDATE)
-   - lib/function/function.php (UPDATE)
+
    
 <h1>Developers</h1>
   <h4>JehanKandy</h4>
