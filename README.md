@@ -71,6 +71,7 @@
    - lib/function/funtion.php (UPDATE)
    - lib/routes/admin.php (UPDATE)
    - css/style.css (UPDATE)
+   - lib/routes/teacher.php (UPDATE)
 
    
 <h1>Developers</h1>
