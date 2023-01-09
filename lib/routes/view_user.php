@@ -13,9 +13,9 @@
 
 <div class="view-user">
     <div class="container">
-        <div class="title"></div>
+        <div class="title"> User : <?php view_user_email(); ?></div>
         <div class="body">
-            
+
         </div>
     </div>
 </div>
