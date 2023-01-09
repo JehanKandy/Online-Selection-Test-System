@@ -25,7 +25,7 @@
                 $result = to_active_user($_POST['to_active']);
                 echo $result;
             }
-            elseif(isset($_POST['to_pending_user'])){
+            elseif(isset($_POST['to_pending_form'])){
                 $result = to_pending_user($_POST['to_pending']);
                 echo $result;
             }
