@@ -15,7 +15,9 @@
     <div class="container">
         <div class="title">Deleted Approvals</div>
     
-        <div class="bod">
+        <div class="body">
+            <a href="admin.php"><button class="btn btn-primary" style="margin: 30px 0 30px 0;">Back</button></a>
+
             <div class="table-responsive-lg">
                 <table class="table">
                     <thead>
@@ -26,7 +28,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php view_all_users(); ?>
+                        <?php all_deleted_approvels(); ?>
                     </tbody>
                 </table>
             </div>
