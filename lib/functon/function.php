@@ -640,8 +640,25 @@
         $con = Connection();
 
         $id = $_GET['id'];
+        $_SESSION['UserID'] = $id;
 
         echo $id;
+    }
+
+    function user_data(){
+        $con = Connection();
+
+        $id = strval($_SESSION['UserID']);
+
+        echo $id;
+
+        $user_data_sql = "SELECT * FROM user_tbl WHERE email = '$id'";
+        $user_data_sql_result = mysqli_query($con,$user_data_sql);
+        $user_data_row = mysqli_fetch_assoc($user_data_sql_result);
+
+        $user_data_view = "";
+
+        echo $user_data_view;
     }
 
 ?>
