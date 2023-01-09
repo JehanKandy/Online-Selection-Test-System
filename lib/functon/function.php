@@ -946,7 +946,10 @@
                     }
 
             $all_question .="
-
+                    <td>".$all_question_row['add_date']."</td>
+                    <td>
+                        <a href='view_question.php?id=".$all_question_row['id']."'><button class='btn btn-success'>View</button></a>
+                    </td>
                 </tr>
             
             ";
