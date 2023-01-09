@@ -734,4 +734,20 @@
         echo $user_data_view;
     }
 
+    function to_deactive_user($id){
+        $con = Connection();
+    }
+
+    function to_active_user($id){
+        $con = Connection();
+    }
+
+    function to_pending_user($id){
+        $con = Connection();
+    }
+
+    function to_apprived_user($id){
+        $con = Connection();
+    }
+
 ?>
