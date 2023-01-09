@@ -938,6 +938,13 @@
                         $all_question .="<td><h4><span class='badge badge-danger'>Deactive</span></h4></td>";
                     }
 
+                    if($all_question_row['question_panding'] == 1){
+                        $all_question .="<td><h4><span class='badge badge-info'>Still Pending</span></h4></td>";
+                    }
+                    elseif($all_question_row['question_panding'] == 0){
+                        $all_question .="<td><h4><span class='badge badge-success'>Approved</span></h4></td>";
+                    }
+
             $all_question .="
 
                 </tr>
