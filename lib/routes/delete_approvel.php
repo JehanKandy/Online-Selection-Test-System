@@ -12,7 +12,7 @@
 ?>
 
 <div class="delete-approvel">
-    <div class="continer">
+    <div class="container">
         <div class="title">Delete Approval : </div>
         <hr>
         <div class="body">
