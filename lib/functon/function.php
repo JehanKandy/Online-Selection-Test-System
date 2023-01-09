@@ -642,10 +642,26 @@
                 ";
                 }
 
+                if($user_row['is_pending'] == 1){
+                    $all_user .= "
+                        <td>
+                            <a href='delete_approvel.php?id=".$user_row['email']."'><button class='btn btn-warning'>Delete</button></a>
+                        </td>
+                    ";
+                }
 
             echo $all_user;
         }
     }
+
+    function delet_user_email(){
+        $con = Connection();
+
+        $delete_id = $_GET['id'];
+
+        echo $delete_id;
+    }
+
 
     function view_user_email(){
         $con = Connection();
@@ -840,5 +856,6 @@
             </div>";
         }
     }
+
 
 ?>
