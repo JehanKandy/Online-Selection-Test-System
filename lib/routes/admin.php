@@ -78,6 +78,7 @@
                                     <th>User Stats</th>
                                     <th>Panding Status</th>
                                     <th></th>
+                                    <th>Delete Approval</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -86,7 +87,10 @@
                         </table>
                     </div>
                 </div>
+                <a href="view_deleted_approvels.php"><button class="btn btn-primary">View Deleted Approvals</button></a>
             </div>
+
+
         </div>
     </div>
 </div>
