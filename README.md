@@ -66,6 +66,8 @@
   
    - lib/routes/view_user.php
    - lib/routes/delete_approvel.php
+   - lib/routes/view_deleted_approvels.php
+   - lib/routes/all_question.php
    - lib/function/funtion.php (UPDATE)
    - lib/routes/admin.php (UPDATE)
    - css/style.css (UPDATE)
