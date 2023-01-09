@@ -49,9 +49,9 @@
    
    <h4> 07 January 2023</h4>
   
-   - lib/routes/add_question.php
-   - css/style.css
-   - lib/function/function.php
+   - lib/routes/add_question.php (UPDATE)
+   - css/style.css (UPDATE)
+   - lib/function/function.php (UPDATE)
 
    
 <h1>Developers</h1>
