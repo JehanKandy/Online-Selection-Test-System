@@ -74,7 +74,6 @@
    - lib/routes/teacher.php (UPDATE)
 
 
-
    
 <h1>Developers</h1>
   <h4>JehanKandy</h4>
