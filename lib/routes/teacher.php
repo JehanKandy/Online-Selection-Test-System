@@ -71,6 +71,34 @@
                 <a href="add_question.php"><button class="btn btn-primary">Add Questions</button></a>
             </div>
         </div>
+        <hr>
+
+        <div class="added-question">
+            <div class="title">
+                Added Question 
+            </div>
+            <div class="body">
+                <div class="body">
+                    <div class="table-responsive-lg">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Question</th>
+                                    <th>Add User</th>
+                                    <th>Add Time</th>
+                                    <th>Question Stats</th>
+                                    <th>Panding</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php view_add_question(); ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

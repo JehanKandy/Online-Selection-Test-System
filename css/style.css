@@ -131,6 +131,37 @@ font-family: 'Teko', sans-serif;
 .teacher-content .title{
     font-size: 50px;
 }
+.add-question{
+    margin: 100px 0 100px 0;
+}
+.add-question .title{
+    text-align: center;
+    font-size: 35px;
+}
+.admin-content{
+    margin: 50px 0 50px 0;
+}
+.admin-content .title{
+    font-size: 50px;
+}
+.view-user{
+    margin: 50px 0 50px 0;
+}
+.view-user .title{
+    font-size: 50px;
+}
+.delete-approvel{
+    margin: 50px 0 50px 0;
+}
+.delete-approvel .title{
+    font-size: 40px;
+}
+.deleted-approvels{
+    margin: 50px 0 50px 0;
+}
+.deleted-approvels .title{
+    font-size: 40px;
+}
 /* 
     ***************************************************************************************
 

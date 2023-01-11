@@ -435,5 +435,540 @@
         }
     }
 
+    function admin_access(){
+        $con = Connection();
 
+        $login_email = strval($_SESSION['LoginSession']);
+
+        $select_access = "SELECT * FROM user_tbl WHERE email = '$login_email'";
+        $select_access_result = mysqli_query($con, $select_access);
+        $select_access_row = mysqli_fetch_assoc($select_access_result);
+
+        if($select_access_row['user_type'] != 'admin'){
+            header("location:../views/logout.php");
+        }
+    }
+
+    function teacher_admin_access(){
+        $con = Connection();
+
+        $login_email = strval($_SESSION['LoginSession']);
+
+        $select_access = "SELECT * FROM user_tbl WHERE email = '$login_email'";
+        $select_access_result = mysqli_query($con, $select_access);
+        $select_access_row = mysqli_fetch_assoc($select_access_result);
+
+        if($select_access_row['user_type'] != 'admin' || $select_access_row['user_type'] != 'teacher'){
+            header("location:../views/logout.php");
+        }
+    }
+
+    function add_question($question, $op1, $op2, $op3, $op4, $cop){
+        $con = Connection();
+        $login_email = strval($_SESSION['LoginSession']);
+
+
+        if(empty($question)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Question</strong> Qestion Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+        if(empty($op1)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Option 1 </strong> Option 1 Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+        if(empty($op2)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Option 2 </strong> Option 2 Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+        if(empty($op3)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Option 3 </strong> Option 3 Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+        if(empty($op4)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Option 4 </strong> Option 4 Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+        if(empty($cop)){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                <strong>Correct Answer </strong> Correct Answer Can not be Empty...!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+        </div>";
+        }
+        if($cop >= 4){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Error </strong> Wrong Option...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+
+        $check_question = "SELECT * FROM question_tbl WHERE question = '$question'";
+        $check_question_result = mysqli_query($con, $check_question);
+        $check_question_nor = mysqli_num_rows($check_question_result);
+
+        $add_username = "SELECT * FROM user_tbl WHERE email = '$login_email'";
+        $add_username_result = mysqli_query($con, $add_username);
+        $add_username_row = mysqli_fetch_assoc($add_username_result);
+
+        $add_user = $add_username_row['username'];
+
+        if($check_question_nor > 0){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Question Answer </strong> Question Already Added...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+        else{
+            $insert_question = "INSERT INTO question_tbl(question,option1,option2,option3,option4,correct_option,question_status,question_panding,add_date,add_user)VALUES('$question','$op1','$op2','$op3','$op4','$cop',0,1,NOW(),'$add_user')";
+            $insert_question_result = mysqli_query($con, $insert_question);
+
+            if(!$insert_question_result){
+                return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                        <strong>ERROR </strong> Error While adding data to database...!
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                        </button>
+                </div>";
+            }else{
+                return  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                        <strong>Successful </strong> Question Added Successfully...!
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                        </button>
+                </div>";
+            }
+        }
+    }
+
+    function view_add_question(){
+        $con = Connection();
+
+        $select_question = "SELECT * FROM question_tbl";
+        $select_question_result = mysqli_query($con, $select_question);
+
+        while($question_row = mysqli_fetch_assoc($select_question_result)){
+            $question_data = "
+                <tr>
+                    <td>".$question_row['question']."</td>
+                    <td>".$question_row['add_user']."</td>
+                    <td>".$question_row['add_date']."</td>
+                    ";
+                        if($question_row['question_status'] == 1){
+                            $question_data .= "<td><h4><span class='badge badge-success'>Active</span></h4></td>";
+                        }
+                        elseif($question_row['question_status'] == 0){
+                            $question_data .= "<td><h4><span class='badge badge-danger'>Deactive</span></h4></td>";
+                        }
+
+                        if($question_row['question_panding'] == 0){
+                            $question_data .= "<td><h4><span class='badge badge-success'>Approved</span></h4></td>";
+                        }
+                        elseif($question_row['question_panding'] == 1){
+                            $question_data .= "<td><h4><span class='badge badge-danger'>Still Pending</span></h4></td>";
+                        }
+
+            $question_data .= "                    
+                    <td>
+                        <a href='view_question.php?id=".$question_row['id']."'><button class='btn btn-success'>View</button></a>
+                    </td>
+                </tr>";
+
+            echo $question_data;
+        }
+    }
+
+    function view_all_users(){
+        $con = Connection();
+
+        $login_email = strval($_SESSION['LoginSession']);
+
+        $select_user = "SELECT * FROM user_tbl";
+        $select_user_result = mysqli_query($con, $select_user);
+
+        while($user_row = mysqli_fetch_assoc($select_user_result)){
+            $all_user = "
+                <tr>
+                    <td>".$user_row['username']."</td>
+                    <td>".$user_row['email']."</td>";
+
+                if($user_row['user_type'] == 'admin'){
+                    $all_user .= "<td><h4><span class='badge badge-warning'>Admin</span></h4></td>";
+                }
+                elseif($user_row['user_type'] == 'teacher'){
+                    $all_user .= "<td><h4><span class='badge badge-warning'>Teacher</span></h4></td>";
+                }
+                elseif($user_row['user_type'] == 'student'){
+                    $all_user .= "<td><h4><span class='badge badge-warning'>Student</span></h4></td>";
+                }
+ 
+                if($user_row['is_active'] == 1){
+                    $all_user .="<td><h4><span class='badge badge-success'>Active</span></h4></td>";
+                }
+                elseif($user_row['is_active'] == 0){
+                    $all_user .="<td><h4><span class='badge badge-danger'>Deactive</span></h4></td>";
+                }
+
+
+                if($user_row['is_pending'] == 1){
+                    $all_user .="<td><h4><span class='badge badge-danger'>Still Pending</span></h4></td>";
+                }
+                elseif($user_row['is_pending'] == 0){
+                    $all_user .="<td><h4><span class='badge badge-success'>Approved</span></h4></td>";
+                }
+            
+
+                if($user_row['email'] == $login_email){
+                    $all_user .="
+                        <td>
+                            <span style='color:red;'>Loged User</span>
+                        </td>";
+                }
+                else{
+                    $all_user .="
+                    <td>
+                        <a href='view_user.php?id=".$user_row['email']."'><button class='btn btn-primary'>View</button></a>
+                    </td>
+                ";
+                }
+
+                if($user_row['is_pending'] == 1){
+                    $all_user .= "
+                        <td>
+                            <a href='delete_approvel.php?id=".$user_row['email']."'><button class='btn btn-warning'>Delete</button></a>
+                        </td>
+                    ";
+                }
+                elseif($user_row['is_pending'] == 0){
+                    $all_user .= "
+                        <td><span style='color:green;'>Active User</span></td>
+                    ";
+                }
+
+
+            echo $all_user;
+        }
+    }
+
+    function delet_user_email(){
+        $con = Connection();
+
+        $delete_id = $_GET['id'];
+        $_SESSION['DeleteID'] = $delete_id;
+
+        echo $delete_id;
+    }
+
+
+    function view_user_email(){
+        $con = Connection();
+
+        $id = $_GET['id'];
+        $_SESSION['UserID'] = $id;
+
+        echo $id;
+    }
+
+    function user_data(){
+        $con = Connection();
+
+        $id = strval($_SESSION['UserID']);
+
+
+        $user_data_sql = "SELECT * FROM user_tbl WHERE email = '$id'";
+        $user_data_sql_result = mysqli_query($con,$user_data_sql);
+        $user_data_row = mysqli_fetch_assoc($user_data_sql_result);
+
+        $user_data_view = "
+            <a href='admin.php'><button class='btn btn-primary' style='margin-top:10px; margin-bottom:30px;'>Back</button></a>
+            
+            <p> Username :  </p>
+            <input type='text' value='".$user_data_row['username']."' class='form-control' disabled> <br>
+
+            <p> Email :  </p>
+            <input type='email' value='".$user_data_row['email']."' class='form-control' disabled> <br>
+
+            <p> Address :  </p>
+            <input type='text' value='".$user_data_row['user_address']."' class='form-control' disabled> <br>
+
+            <p> NIC :  </p>
+            <input type='text' value='".$user_data_row['nic']."' class='form-control' disabled> <br>
+            
+            <p> Data of Birth :  </p>
+            <input type='text' value='".$user_data_row['dob']."' class='form-control' disabled> <br>
+
+            <p> Mobile Number :  </p>
+            <input type='text' value='".$user_data_row['mobile_no']."' class='form-control' disabled> <br>
+        ";
+
+        if($user_data_row['is_active'] == 1){
+            $user_data_view .="
+                <p> User Status : </p>
+                    <h4><span class='badge badge-success'>Active User</span></h4>
+                <form action='' method='POST'>
+                    <input type='hidden' value='0' name='to_deactive'>
+                    <input type='submit' name='to_deactive_form' class='btn btn-danger' value='To Dactive'>
+                </form>    
+            ";
+        }
+        elseif($user_data_row['is_active'] == 0){
+            $user_data_view .="
+                <p> User Status : </p>
+                    <h4><span class='badge badge-danger'>Deactive User</span></h4>
+                <form action='' method='POST'>
+                    <input type='hidden' value='1' name='to_active'>
+                    <input type='submit' name='to_active_form' class='btn btn-success' value='To Active'>
+                </form>    
+            ";
+        }
+
+        if($user_data_row['is_pending'] == 0){
+            $user_data_view .="
+                <p> User Status : </p>
+                    <h4><span class='badge badge-success'>Approved User</span></h4>
+                <form action='' method='POST'>
+                    <input type='hidden' value='1' name='to_pending'>
+                    <input type='submit' name='to_pending_form' class='btn btn-info' value='To Pending'>
+                </form>    
+            ";
+        }
+        elseif($user_data_row['is_pending'] == 1){
+            $user_data_view .="
+                <p> User Status : </p>
+                    <h4><span class='badge badge-info'>Still Pending User</span></h4>
+                <form action='' method='POST'>
+                    <input type='hidden' value='0' name='to_approved'>
+                    <input type='submit' name='to_approved_form' class='btn btn-success' value='To Approved'>
+                </form>    
+            ";
+        }
+
+
+        echo $user_data_view;
+    }
+
+    function to_deactive_user($value){
+        $con = Connection();
+
+        $id = strval($_SESSION['UserID']);
+
+        $update_user = "UPDATE user_tbl SET is_active = '$value' WHERE email='$id'";
+        $update_user_result = mysqli_query($con, $update_user);
+
+        if(!$update_user_result){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Process Error </strong> Can not Process Task...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+        else{
+            return  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>Successful </strong> User Uppdate Sucessfully...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+    }
+
+    function to_active_user($value){
+        $con = Connection();
+
+        $id = strval($_SESSION['UserID']);
+
+        $update_user = "UPDATE user_tbl SET is_active = '$value' WHERE email='$id'";
+        $update_user_result = mysqli_query($con, $update_user);
+
+        if(!$update_user_result){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Process Error </strong> Can not Process Task...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+        else{
+            return  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>Successful </strong> User Uppdate Sucessfully...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+    }
+    
+
+    function to_pending_user($value){
+        $con = Connection();
+
+        
+        $id = strval($_SESSION['UserID']);
+
+        $update_user = "UPDATE user_tbl SET is_pending = '$value' WHERE email='$id'";
+        $update_user_result = mysqli_query($con, $update_user);
+
+        if(!$update_user_result){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Process Error </strong> Can not Process Task...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+        else{
+            return  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>Successful </strong> User Uppdate Sucessfully...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+    }
+
+    function to_apprived_user($value){
+        $con = Connection();
+
+        
+        $id = strval($_SESSION['UserID']);
+
+        $update_user = "UPDATE user_tbl SET is_pending = '$value' WHERE email='$id'";
+        $update_user_result = mysqli_query($con, $update_user);
+
+        if(!$update_user_result){
+            return  "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Process Error </strong> Can not Process Task...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+        else{
+            return  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>Successful </strong> User Uppdate Sucessfully...!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                    </button>
+            </div>";
+        }
+    }
+
+    function delete_user_data(){
+        $con = Connection();
+
+        $delete_id = strval($_SESSION['DeleteID']);
+
+        $select_delete_user = "SELECT * FROM user_tbl WHERE email = '$delete_id'";
+        $select_delete_user_result = mysqli_query($con,$select_delete_user);
+        $select_delete_user_row = mysqli_fetch_assoc($select_delete_user_result);
+
+        $delete_user = "
+            <a href='admin.php'><button class='btn btn-primary' style='margin-top:10px; margin-bottom:25px;'>Back</button></a>
+            <form action='' method='POST'>
+                <p>Username : </p>
+                <input type='text' value='".$select_delete_user_row['username']."' class='form-control' disabled><br>
+
+                <p>Email : </p>
+                <input type='email' value='".$select_delete_user_row['email']."' class='form-control' disabled><br>
+                <input type='hidden' name='user_email' value='".$select_delete_user_row['email']."'>
+
+
+                <input type='submit' name='delete_user' class='btn btn-danger' value='Delete Approvel'>
+            </form>
+        ";
+
+        echo $delete_user;
+        
+    }
+
+    function delete_user($delete_user_email){
+        $con = Connection();
+
+        $delete_user = "DELETE FROM user_tbl WHERE email = '$delete_user_email'";        
+        $delete_user_result = mysqli_query($con, $delete_user);
+        header("location:admin.php");
+    }
+
+    function all_deleted_approvels(){
+        $con = Connection();
+
+        $deleted_approvels = "SELECT * FROM delete_approval_tbl";
+        $deleted_approvels_result = mysqli_query($con, $deleted_approvels);
+
+        while($deleted_approvels_row = mysqli_fetch_assoc($deleted_approvels_result)){
+            $deleted_approvels = "
+                <tr>
+                    <td>".$deleted_approvels_row['username']."</td>
+                    <td>".$deleted_approvels_row['email']."</td>
+                    <td>".$deleted_approvels_row['delete_date']."</td>
+                </tr>
+            ";
+
+            echo $deleted_approvels;
+        }
+    }
+
+    function view_all_questions(){
+        $con = Connection();
+
+        $all_question = "SELECT * FROM question_tbl";
+        $all_question_result = mysqli_query($con, $all_question);
+
+        while($all_question_row = mysqli_fetch_assoc($all_question_result)){
+            $all_question = "
+                <tr>
+                    <td>".$all_question_row['question']."</td>
+                    <td>".$all_question_row['add_user']."</td>";
+
+                    if($all_question_row['question_status'] == 1){
+                        $all_question .="<td><h4><span class='badge badge-success'>Active</span></h4></td>";
+                    }
+                    elseif($all_question_row['question_status'] == 0){
+                        $all_question .="<td><h4><span class='badge badge-danger'>Deactive</span></h4></td>";
+                    }
+
+                    if($all_question_row['question_panding'] == 1){
+                        $all_question .="<td><h4><span class='badge badge-info'>Still Pending</span></h4></td>";
+                    }
+                    elseif($all_question_row['question_panding'] == 0){
+                        $all_question .="<td><h4><span class='badge badge-success'>Approved</span></h4></td>";
+                    }
+
+            $all_question .="
+                    <td>".$all_question_row['add_date']."</td>
+                    <td>
+                        <a href='view_question.php?id=".$all_question_row['id']."'><button class='btn btn-success'>View</button></a>
+                    </td>
+                </tr>
+            
+            ";
+
+            echo $all_question;
+        }
+    }
 ?>
