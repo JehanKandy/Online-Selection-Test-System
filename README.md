@@ -73,16 +73,7 @@
    - css/style.css (UPDATE)
    - lib/routes/teacher.php (UPDATE)
 
-   <h4> 11 January 2023</h4>
-  
-   - lib/routes/view_user.php
-   - lib/routes/delete_approvel.php
-   - lib/routes/view_deleted_approvels.php
-   - lib/routes/all_question.php
-   - lib/function/funtion.php (UPDATE)
-   - lib/routes/admin.php (UPDATE)
-   - css/style.css (UPDATE)
-   - lib/routes/teacher.php (UPDATE)
+
 
    
 <h1>Developers</h1>
