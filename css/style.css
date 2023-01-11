@@ -162,6 +162,12 @@ font-family: 'Teko', sans-serif;
 .deleted-approvels .title{
     font-size: 40px;
 }
+.view-question{
+    margin: 50px 0 50px 0;
+}
+.view-question .title{
+    font-size: 40px;
+}
 /* 
     ***************************************************************************************
 
