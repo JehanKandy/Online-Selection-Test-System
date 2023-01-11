@@ -11,6 +11,14 @@
 
 ?>
 
+<div class="view-question">
+    <div class="container">
+        <div class="title">View Question</div>
+        <hr>
+        <a href="admin.php"><button class="btn btn-primary">Back</button></a>
+    </div>
+</div>
+
 
 <script src="../../js/script.js"></script>
 <?php include("../layouts/footer.php"); ?>
